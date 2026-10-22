@@ -144,7 +144,7 @@ p { margin: 0; }
 .header-row { display: flex; align-items: center; gap: 20px; min-height: 64px; position: relative; }
 .brand { font: 750 1.2rem/1 var(--f-display); text-decoration: none; letter-spacing: -.01em; margin-right: auto; }
 .brand span { color: var(--accent); }
-.site-nav { display: flex; gap: 22px; font-size: .95rem; }
+.site-nav { display: flex; gap: 18px; font-size: .93rem; }
 .site-nav a { text-decoration: none; color: var(--muted); font-weight: 500; }
 .site-nav a:hover { color: var(--ink); }
 .menu-btn {
@@ -350,6 +350,30 @@ mark {
 .cert-card figcaption b { font: 650 1rem/1.3 var(--f-display); }
 .cert-card figcaption span { font: 500 .78rem/1.4 var(--f-mono); color: var(--muted); }
 @media (max-width: 900px) { .cert-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Featured on LinkedIn */
+.feat-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(14px, 2vw, 22px); }
+.feat-card {
+  position: relative; display: grid; grid-template-rows: auto 1fr; min-width: 0;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+  color: inherit; text-decoration: none;
+}
+.feat-card:hover .feat-cta { text-decoration: underline; }
+.feat-media { display: block; aspect-ratio: 16 / 9; background: var(--bg); overflow: hidden; }
+.feat-media img { width: 100%; height: 100%; object-fit: cover; }
+.feat-media.tile {
+  display: grid; place-content: center; gap: 6px; padding: 16px; text-align: center; color: var(--on-accent);
+  background: radial-gradient(120% 90% at 18% 8%, rgba(255, 255, 255, .2), transparent 55%), var(--grad-btn);
+}
+.feat-media.tile b { font: 800 clamp(1.9rem, 3.6vw, 2.7rem)/1 var(--f-display); letter-spacing: -.02em; }
+.feat-media.tile b[lang="ja"] { font-family: var(--f-jp); }
+.feat-media.tile small { font: 600 .74rem/1.35 var(--f-mono); letter-spacing: .06em; text-transform: uppercase; }
+.feat-body { display: grid; gap: 6px; align-content: start; padding: 16px 18px 18px; }
+.feat-date { font: 500 .76rem/1.3 var(--f-mono); color: var(--muted); }
+.feat-title { font: 650 1.05rem/1.35 var(--f-display); }
+.feat-cta { margin-top: 4px; font-size: .88rem; font-weight: 600; color: var(--accent); }
+@media (max-width: 900px) { .feat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .feat-grid { grid-template-columns: minmax(0, 1fr); } }
 
 /* Gallery */
 .gallery { columns: 3 260px; column-gap: 14px; }
@@ -557,6 +581,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       <a href="#research">Research</a>
       <a href="#awards">Awards</a>
       <a href="#certificates">Certificates</a>
+      <a href="#featured">Featured</a>
       <a href="#gallery">Gallery</a>
       <a href="#story">Story</a>
       <a href="#art">Art</a>
@@ -584,6 +609,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         <li>National Badminton Player</li>
         <li>Int'l Hackathon Judge</li>
         <li>Merit Scholarship Holder</li>
+        <li>University Debating Team</li>
       </ul>
       <p class="statement rise d1">Solving hard problems with data, and <mark>teaching hundreds of others to do the same.</mark></p>
       <p class="lede rise d2"><strong>Muskaan Irfan</strong> is a data scientist and mathematician from Pakistan. In 2026 the Government of Japan invited her to the University of Fukui as a JST Sakura Science visiting researcher. She holds an MS in Data Science from Air University, where she graduated as Silver Medalist, and a BS in Mathematics from Quaid-i-Azam University. <strong>She is now looking for MS/PhD positions.</strong></p>
@@ -751,7 +777,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         <p class="when">Aug 2024 – now</p>
         <div>
           <h3>Tech Mentor &amp; Judge <span class="org">GenAI Hackathon · Pak-Angels, San Jose, CA</span></h3>
-          <p>Gave a webinar on hackathon strategy, ideas, teamwork and pitching to 500+ participants. Guided teams building RAG systems and chatbots, and evaluated 100+ projects.</p>
+          <p>Gave a webinar on hackathon strategy, ideas, teamwork and pitching to 500+ participants. Guided teams building RAG systems and chatbots, and evaluated 100+ projects. In 2026 she judged Cohort 3 of the NCEAC-HEC Generative AI Training, which brought together 500+ engineers and researchers.</p>
           <p class="links">
             <a class="link arrow" href="https://www.youtube.com/watch?v=SDbo38Wre6I&amp;t=132s" target="_blank" rel="noopener">Watch the webinar </a>
             <a class="link arrow" href="https://www.linkedin.com/posts/muskaan03_generativeai-generativeai-hackathon-activity-7309991696799277057-qxS2" target="_blank" rel="noopener">Hackathon post </a>
@@ -761,8 +787,8 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       <article class="role">
         <p class="when">2026</p>
         <div>
-          <h3>Program Committee Member <span class="org">IEEE MedAI 2026</span></h3>
-          <p>Selected to peer-review medical AI research. She has also reviewed 10+ papers for conferences and NeurIPS workshops, and speaks at academic and research events.</p>
+          <h3>Program Committee Member &amp; Reviewer <span class="org">IEEE MedAI 2026 · WiML @ NeurIPS 2026</span></h3>
+          <p>Selected to peer-review medical AI research for IEEE MedAI 2026 and to review for WiML @ NeurIPS 2026. She has reviewed 10+ papers and abstracts, and speaks at academic and research events.</p>
           <p class="links">
             <a class="link arrow" href="https://drive.google.com/file/d/19-4-_sw9BPHu1FXLA-F9q8oThoLj9DUy/view?usp=sharing" target="_blank" rel="noopener">IEEE MedAI </a>
             <a class="link arrow" href="https://drive.google.com/file/d/1ad-PGoF4ii3JGfLn7kxbVH6HC7BKL6BK/view?usp=sharing" target="_blank" rel="noopener">Reviewer record </a>
@@ -883,7 +909,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     <div class="awards">
       <div class="award">
         <p class="yr">2024–26</p>
-        <div><h3>Winner, CS50x Puzzle Day · Harvard University</h3><p>Three years running. Her team solved all 9 puzzles.</p></div>
+        <div><h3>Winner, CS50x Puzzle Day · Harvard University</h3><p>Three years running, solving every puzzle each time: 9 of 9 in 2024 and 2025, and 10 of 10 in 2026.</p></div>
         <p class="proof"><a class="link arrow" href="https://www.linkedin.com/feed/update/urn:li:activity:7448640415182016512/" target="_blank" rel="noopener">Proof </a></p>
       </div>
       <div class="award">
@@ -918,6 +944,11 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         <p class="yr">2025</p>
         <div><h3>2nd among female coders in Pakistan · Advent of Code</h3><p>12th overall on the leaderboard.</p></div>
         <p class="proof"><a class="link arrow" href="https://drive.google.com/file/d/13ADmL_YXOa7j2upbojECb66BnC4ClG-2/view?usp=sharing" target="_blank" rel="noopener">Proof </a></p>
+      </div>
+      <div class="award">
+        <p class="yr">2025</p>
+        <div><h3>101st of 820+ teams · UC Berkeley CALICO, Spring 2025</h3><p>Global rank, with team CodeX.</p></div>
+        <p class="proof"><a class="link arrow" href="https://www.linkedin.com/feed/update/urn:li:activity:7322372370579496960/" target="_blank" rel="noopener">Proof </a></p>
       </div>
       <div class="award">
         <p class="yr">2024</p>
@@ -956,7 +987,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     <div class="section-head">
       <p class="eyebrow">Certificates</p>
       <h2 class="h2" id="certs-h">From Harvard to Fukui, on paper</h2>
-      <p class="intro">Tap any certificate to see it full size.</p>
+      <p class="intro">Every certificate from her candidature file and her LinkedIn. Tap any certificate to see it full size.</p>
     </div>
     <div class="cert-grid">
       <figure class="cert-card feature">
@@ -968,6 +999,10 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         <figcaption><b>Certificate of Appreciation</b><span>University of Fukui · 2026</span></figcaption>
       </figure>
       <figure class="cert-card">
+        <button class="zoom" type="button" data-group="certs" data-src="assets/certs/cs50-2026.jpg" data-cap="Harvard CS50x Puzzle Day 2026: solved all 10 puzzles"><img src="assets/certs/cs50-2026.jpg" width="480" height="370" alt="Harvard CS50x Puzzle Day 2026 certificate" loading="lazy"></button>
+        <figcaption><b>CS50x Puzzle Day, 10 of 10</b><span>Harvard University · 2026</span></figcaption>
+      </figure>
+      <figure class="cert-card">
         <button class="zoom" type="button" data-group="certs" data-src="assets/certs/cs50-2025.jpg" data-cap="Harvard CS50x Puzzle Day 2025: solved all 9 puzzles"><img src="assets/certs/cs50-2025.jpg" width="887" height="676" alt="Harvard CS50x Puzzle Day 2025 certificate" loading="lazy"></button>
         <figcaption><b>CS50x Puzzle Day, 9 of 9</b><span>Harvard University · 2025</span></figcaption>
       </figure>
@@ -976,8 +1011,16 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         <figcaption><b>CS50x Puzzle Day, 9 of 9</b><span>Harvard University · 2024</span></figcaption>
       </figure>
       <figure class="cert-card">
+        <button class="zoom" type="button" data-group="certs" data-src="assets/certs/genai-judge-2026.jpg" data-cap="Generative AI Instructor/Mentor/Judge Certificate, UETians Lahore Endowment Foundation USA with NCEAC-HEC, Pak Angels, iCodeGuru and Aspire Pakistan, March to May 2026"><img src="assets/certs/genai-judge-2026.jpg" width="480" height="370" alt="Generative AI Instructor, Mentor and Judge certificate, 2026" loading="lazy"></button>
+        <figcaption><b>Gen AI Instructor, Mentor &amp; Judge</b><span>ULEF USA · NCEAC-HEC · 2026</span></figcaption>
+      </figure>
+      <figure class="cert-card">
         <button class="zoom" type="button" data-group="certs" data-src="assets/certs/meta-2025.jpg" data-cap="Meta Hacker Cup 2025: progressed to Round 1"><img src="assets/certs/meta-2025.jpg" width="930" height="659" alt="Meta Hacker Cup 2025 Round 1 certificate" loading="lazy"></button>
         <figcaption><b>Hacker Cup, Round 1</b><span>Meta · 2025</span></figcaption>
+      </figure>
+      <figure class="cert-card">
+        <button class="zoom" type="button" data-group="certs" data-src="assets/certs/meta-2025-practice.jpg" data-cap="Meta Hacker Cup 2025, Practice Round: 6th in Pakistan, top 3% globally"><img src="assets/certs/meta-2025-practice.jpg" width="480" height="338" alt="Meta Hacker Cup 2025 Practice Round certificate" loading="lazy"></button>
+        <figcaption><b>Hacker Cup, Practice Round</b><span>Meta · 2025</span></figcaption>
       </figure>
       <figure class="cert-card">
         <button class="zoom" type="button" data-group="certs" data-src="assets/certs/meta-2024.jpg" data-cap="Meta Hacker Cup 2024: progressed to Round 1"><img src="assets/certs/meta-2024.jpg" width="943" height="664" alt="Meta Hacker Cup 2024 Round 1 certificate" loading="lazy"></button>
@@ -990,6 +1033,10 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       <figure class="cert-card">
         <button class="zoom" type="button" data-group="certs" data-src="assets/certs/genai-mentor-2.jpg" data-cap="Gen AI Application Instructor/Mentor Certificate, Pakistan Engineering Council with Pak-Angels and iCode Guru, December 2024 to January 2025"><img src="assets/certs/genai-mentor-2.jpg" width="918" height="633" alt="Gen AI Application Instructor and Mentor certificate, 2024 to 2025" loading="lazy"></button>
         <figcaption><b>Gen AI Instructor &amp; Mentor</b><span>Pakistan Engineering Council · 2024–25</span></figcaption>
+      </figure>
+      <figure class="cert-card">
+        <button class="zoom" type="button" data-group="certs" data-src="assets/certs/genai-mentor-2024.jpg" data-cap="Gen AI Application Instructor/Mentor Certificate, Pak Angels Essential Generative AI Training, July to September 2024"><img src="assets/certs/genai-mentor-2024.jpg" width="480" height="337" alt="Pak Angels Gen AI Application Instructor and Mentor certificate, 2024" loading="lazy"></button>
+        <figcaption><b>Gen AI Instructor &amp; Mentor</b><span>Pak Angels · 2024</span></figcaption>
       </figure>
       <figure class="cert-card">
         <button class="zoom" type="button" data-group="certs" data-src="assets/certs/python-mathematicians.jpg" data-cap="Certificate of Appreciation for teaching Python for Mathematicians, COMSATS University Islamabad, Lahore Campus, October 2024"><img src="assets/certs/python-mathematicians.jpg" width="687" height="421" alt="COMSATS certificate of appreciation for teaching Python for Mathematicians" loading="lazy"></button>
@@ -1016,6 +1063,68 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         <figcaption><b>International Youth Math Challenge</b><span>IYMC · 2021</span></figcaption>
       </figure>
     </div>
+  </div>
+</section>
+
+<!-- Featured -->
+<section class="section" id="featured" aria-labelledby="featured-h" style="padding-top: 0;">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Featured on LinkedIn</p>
+      <h2 class="h2" id="featured-h">Highlights she has shared</h2>
+      <p class="intro">Milestones from her LinkedIn. Each card opens the full post.</p>
+    </div>
+    <div class="feat-grid">
+      <a class="feat-card" href="https://www.linkedin.com/feed/update/urn:li:activity:7499934362474348544/" target="_blank" rel="noopener">
+        <span class="feat-media tile"><b>Reviewer</b><small>IEEE MedAI · WiML @ NeurIPS</small></span>
+        <span class="feat-body"><span class="feat-date">Aug 2026</span><span class="feat-title">Program Committee Member and Reviewer for IEEE MedAI 2026 and WiML @ NeurIPS 2026</span><span class="feat-cta">Read on LinkedIn ↗</span></span>
+      </a>
+      <a class="feat-card" href="https://www.linkedin.com/feed/update/urn:li:activity:7478345612904812546/" target="_blank" rel="noopener">
+        <span class="feat-media tile"><b lang="ja">福井</b><small>Tannan FM Magazine</small></span>
+        <span class="feat-body"><span class="feat-date">Jul 2026</span><span class="feat-title">From Pakistan to Japan: featured in a Japanese magazine</span><span class="feat-cta">Read on LinkedIn ↗</span></span>
+      </a>
+      <a class="feat-card" href="https://www.linkedin.com/feed/update/urn:li:activity:7464991087355514882/" target="_blank" rel="noopener">
+        <span class="feat-media"><img src="assets/featured/japan-lecture.jpg" width="480" height="279" alt="Lecture hall with students and a speaker at the front" loading="lazy"></span>
+        <span class="feat-body"><span class="feat-date">May 2026</span><span class="feat-title">Contributing to Prof. Amil Khanzada's lecture at a Japanese university</span><span class="feat-cta">Read on LinkedIn ↗</span></span>
+      </a>
+      <a class="feat-card" href="https://www.linkedin.com/feed/update/urn:li:activity:7448640415182016512/" target="_blank" rel="noopener">
+        <span class="feat-media tile"><b>10 / 10</b><small>CS50x Puzzle Day 2026</small></span>
+        <span class="feat-body"><span class="feat-date">Apr 2026</span><span class="feat-title">Another year, another win: all 10 puzzles at CS50x Puzzle Day 2026</span><span class="feat-cta">Read on LinkedIn ↗</span></span>
+      </a>
+      <a class="feat-card" href="https://www.linkedin.com/feed/update/urn:li:activity:7405312141769273345/" target="_blank" rel="noopener">
+        <span class="feat-media"><img src="assets/featured/advent-2025.jpg" width="480" height="381" alt="Advent of Code 2025 puzzle calendar in green ASCII art" loading="lazy"></span>
+        <span class="feat-body"><span class="feat-date">Dec 2025</span><span class="feat-title">Finishing Advent of Code 2025</span><span class="feat-cta">Read on LinkedIn ↗</span></span>
+      </a>
+      <a class="feat-card" href="https://www.linkedin.com/feed/update/urn:li:activity:7370421793087668224/" target="_blank" rel="noopener">
+        <span class="feat-media"><img src="assets/featured/zafar-talk.jpg" width="480" height="297" alt="Dr. Zafar Shahid speaking at a podium to a room of students" loading="lazy"></span>
+        <span class="feat-body"><span class="feat-date">Sep 2025</span><span class="feat-title">Meeting Dr. Zafar Shahid, engineering leader from Silicon Valley</span><span class="feat-cta">Read on LinkedIn ↗</span></span>
+      </a>
+      <a class="feat-card" href="https://www.linkedin.com/feed/update/urn:li:activity:7359048298277597185/" target="_blank" rel="noopener">
+        <span class="feat-media"><img src="assets/featured/zafar-dinner.jpg" width="480" height="360" alt="Muskaan and Dr. Zafar Shahid at a dinner table" loading="lazy"></span>
+        <span class="feat-body"><span class="feat-date">Aug 2025</span><span class="feat-title">A one-on-one dinner and conversation with Dr. Zafar Shahid</span><span class="feat-cta">Read on LinkedIn ↗</span></span>
+      </a>
+      <a class="feat-card" href="https://www.linkedin.com/feed/update/urn:li:activity:7322372370579496960/" target="_blank" rel="noopener">
+        <span class="feat-media"><img src="assets/featured/calico-spring-2025.jpg" width="480" height="220" alt="CALICO Spring 2025 contest banner" loading="lazy"></span>
+        <span class="feat-body"><span class="feat-date">Apr 2025</span><span class="feat-title">101st of 820+ teams at UC Berkeley's CALICO, Spring 2025</span><span class="feat-cta">Read on LinkedIn ↗</span></span>
+      </a>
+      <a class="feat-card" href="https://www.linkedin.com/feed/update/urn:li:activity:7316801229718728706/" target="_blank" rel="noopener">
+        <span class="feat-media"><img src="assets/featured/cip-section-leader.jpg" width="480" height="188" alt="Stanford Code in Place section leader acceptance screen" loading="lazy"></span>
+        <span class="feat-body"><span class="feat-date">Apr 2025</span><span class="feat-title">Selected as a Section Leader for Stanford's Code in Place</span><span class="feat-cta">Read on LinkedIn ↗</span></span>
+      </a>
+      <a class="feat-card" href="https://www.linkedin.com/feed/update/urn:li:activity:7304623343331065857/" target="_blank" rel="noopener">
+        <span class="feat-media"><img src="assets/featured/cip-training.jpg" width="480" height="480" alt="iCodeGuru poster: Let us become mentor at Stanford Code in Place 2025" loading="lazy"></span>
+        <span class="feat-body"><span class="feat-date">Mar 2025</span><span class="feat-title">Leading training sessions for Stanford's Code in Place 2025</span><span class="feat-cta">Read on LinkedIn ↗</span></span>
+      </a>
+      <a class="feat-card" href="https://www.linkedin.com/feed/update/urn:li:activity:7287550333180878848/" target="_blank" rel="noopener">
+        <span class="feat-media"><img src="assets/featured/mit-2025.jpg" width="480" height="204" alt="MIT Informatics Tournament Winter 2025 banner" loading="lazy"></span>
+        <span class="feat-body"><span class="feat-date">Jan 2025</span><span class="feat-title">114th of 530+ teams at the MIT Informatics Tournament, Winter 2025</span><span class="feat-cta">Read on LinkedIn ↗</span></span>
+      </a>
+      <a class="feat-card" href="https://www.linkedin.com/feed/update/urn:li:activity:7241176818441936896/" target="_blank" rel="noopener">
+        <span class="feat-media"><img src="assets/featured/hackercup-workshop-2024.jpg" width="480" height="480" alt="iCodeGuru poster for the Meta Hacker Cup 2024 workshop, listing Muskaan as a moderator" loading="lazy"></span>
+        <span class="feat-body"><span class="feat-date">Sep 2024</span><span class="feat-title">Moderating iCodeGuru's Meta Hacker Cup 2024 workshops</span><span class="feat-cta">Read on LinkedIn ↗</span></span>
+      </a>
+    </div>
+    <p class="links" style="margin-top: 22px;"><a class="link arrow" href="https://www.linkedin.com/in/muskaan03/details/featured/" target="_blank" rel="noopener">See everything she has featured </a></p>
   </div>
 </section>
 
@@ -1267,7 +1376,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   var fine = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (fine && !calm) {
-    var targets = document.querySelectorAll('.portrait-frame, .research-grid .card, .jp-photos .zoom, .jp-team, .jp-masonry .zoom, .gallery .zoom, .cert-card .zoom, .art-item .zoom');
+    var targets = document.querySelectorAll('.portrait-frame, .research-grid .card, .jp-photos .zoom, .jp-team, .jp-masonry .zoom, .gallery .zoom, .cert-card .zoom, .feat-card, .art-item .zoom');
     Array.prototype.forEach.call(targets, function (el) {
       var max = el.classList.contains('portrait-frame') ? 7 : 9;
       el.classList.add('tilt');
