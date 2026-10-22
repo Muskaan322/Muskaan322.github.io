@@ -210,15 +210,16 @@ mark {
 .trust-names { display: flex; flex-wrap: wrap; gap: 6px 22px; font: 650 1.02rem/1.4 var(--f-display); }
 
 /* Numbers */
-.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
 .stat { padding: 28px 24px 30px 0; border-bottom: 1px solid var(--line); display: grid; gap: 8px; align-content: start; }
-.stat:not(:nth-child(4n + 1)) { padding-left: 24px; border-left: 1px solid var(--line); }
+.stat:not(:nth-child(3n + 1)) { padding-left: 24px; border-left: 1px solid var(--line); }
 .stat b { font: 760 clamp(2.6rem, 5vw, 3.8rem)/1 var(--f-display); letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
 .stat b small { font-size: .5em; color: var(--muted); font-weight: 600; letter-spacing: 0; }
 .stat span { color: var(--muted); font-size: .98rem; max-width: 30ch; }
 @media (max-width: 720px) {
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .stat, .stat:not(:nth-child(4n + 1)) { padding: 22px 14px 24px 0; border-left: 0; }
+  .stat, .stat:not(:nth-child(3n + 1)) { padding: 22px 14px 24px 0; border-left: 0; }
+  .stat:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .stat:nth-child(even) { padding-left: 16px; border-left: 1px solid var(--line); }
 }
 
@@ -631,6 +632,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     <div class="stats">
       <div class="stat"><b>3×</b><span>Winner of Harvard's CS50x Puzzle Day, in 2024, 2025 and 2026</span></div>
       <div class="stat"><b>114<small>/530+</small></b><span>Global rank among teams at the MIT Informatics Tournament 2025</span></div>
+      <div class="stat"><b>101<small>/820+</small></b><span>Global rank among teams at UC Berkeley's CALICO, Spring 2025 (102nd of 860+ in Fall 2024)</span></div>
       <div class="stat"><b>2<small>nd</small></b><span>Among female coders in Pakistan on the Advent of Code 2025 leaderboard</span></div>
       <div class="stat"><b><small>Top </small>3%</b><span>Globally at the Meta Hacker Cup 2025 Practice Round, and 6th in Pakistan</span></div>
       <div class="stat"><b>500+</b><span>Participants at her GenAI hackathon webinar</span></div>
