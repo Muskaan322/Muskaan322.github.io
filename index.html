@@ -1,0 +1,995 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Muskaan Irfan</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<!-- site-head -->
+<meta name="description" content="Muskaan Irfan: data scientist, mathematician and JST Sakura Science researcher. Research, leadership, awards and contact.">
+<meta property="og:title" content="Muskaan Irfan">
+<meta property="og:description" content="Data scientist, mathematician and researcher. Three-time Harvard CS50x Puzzle Day winner, Stanford Code in Place section leader, national badminton player.">
+<meta property="og:image" content="assets/img/fukui-keynote.jpg">
+<!-- /site-head -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&text=%E7%A6%8F%E4%BA%95%E6%97%A5%E6%9C%AC&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@600&text=%D9%BE%D8%A7%DA%A9%D8%B3%D8%AA%D8%A7%D9%86&display=swap">
+<style>
+/* Layout: an editorial one-column story at a 1160px measure. Two full-bleed green bands (Japan, Contact) carry the boldness; everything else stays quiet. */
+:root {
+  --bg: #FCFAF9;
+  --surface: #F6EEEF;
+  --ink: #15201B;
+  --muted: #56645D;
+  --line: #E6DCDD;
+  --green: #0B5D3B;
+  --on-green: #FFFFFF;
+  --band: #0A3A26;
+  --band-ink: #F3EEEC;
+  --band-muted: #B6CBBF;
+  --band-line: rgba(243, 238, 236, .18);
+  --sakura: #E7A1B3;
+  --mark: rgba(231, 161, 179, .45);
+  --red: #C3343F;
+  --pk: #3DAA72;
+  --shadow: 0 1px 2px rgba(21, 32, 27, .06), 0 14px 34px -14px rgba(21, 32, 27, .22);
+
+  --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --f-jp: "Noto Sans JP", "Yu Gothic", "Hiragino Sans", sans-serif;
+  --f-ur: "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", serif;
+
+  --measure: 1160px;
+  --gutter: clamp(16px, 4vw, 40px);
+  --radius: 14px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0D1411; --surface: #15201B; --ink: #ECE6E4; --muted: #A3B1AA; --line: #25322C;
+    --green: #6CCB9C; --on-green: #06110C; --band: #10291E; --band-ink: #EFE9E7; --band-muted: #A9BEB3;
+    --band-line: rgba(239, 233, 231, .14); --sakura: #F0B3C2; --mark: rgba(240, 179, 194, .26);
+    --red: #E8606A; --pk: #4CC487; --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 14px 34px -14px rgba(0, 0, 0, .6);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0D1411; --surface: #15201B; --ink: #ECE6E4; --muted: #A3B1AA; --line: #25322C;
+  --green: #6CCB9C; --on-green: #06110C; --band: #10291E; --band-ink: #EFE9E7; --band-muted: #A9BEB3;
+  --band-line: rgba(239, 233, 231, .14); --sakura: #F0B3C2; --mark: rgba(240, 179, 194, .26);
+  --red: #E8606A; --pk: #4CC487; --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 14px 34px -14px rgba(0, 0, 0, .6);
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 1.0625rem/1.65 var(--f-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+[hidden] { display: none !important; }
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 10; background: var(--bg);
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; }
+p { margin: 0; }
+[id] { scroll-margin-top: 84px; }
+:focus-visible { outline: 3px solid var(--sakura); outline-offset: 3px; border-radius: 4px; }
+
+.wrap {
+  max-width: calc(var(--measure) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
+}
+.section { padding-block: clamp(64px, 9vw, 120px); }
+.eyebrow {
+  font: 600 .78rem/1.3 var(--f-mono);
+  letter-spacing: .12em; text-transform: uppercase; color: var(--green);
+  display: flex; gap: .6em; align-items: center; flex-wrap: wrap;
+}
+.h2 { font-size: clamp(2rem, 4.2vw, 3.3rem); line-height: 1.04; letter-spacing: -.02em; font-weight: 720; }
+.intro { color: var(--muted); max-width: 62ch; font-size: 1.1rem; }
+.section-head { display: grid; gap: 18px; margin-bottom: clamp(36px, 5vw, 56px); }
+
+/* Buttons and links */
+.btn {
+  display: inline-flex; align-items: center; gap: .5em;
+  font: 600 .98rem/1 var(--f-body); text-decoration: none;
+  padding: 14px 20px; border-radius: 999px; border: 1.5px solid var(--green);
+  background: var(--green); color: var(--on-green);
+  transition: transform .15s ease, background .15s ease, color .15s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn.ghost:hover { border-color: var(--ink); }
+.btn-small { padding: 9px 15px; font-size: .9rem; }
+.arrow::after { content: "\2197"; font-size: .9em; }
+.link {
+  color: var(--green); font-weight: 600; text-decoration: none;
+  border-bottom: 1.5px solid color-mix(in srgb, var(--green) 35%, transparent);
+}
+.link:hover { border-bottom-color: var(--green); }
+.links { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 10px; font-size: .95rem; }
+
+/* Header */
+.site-header {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(1.4) blur(12px); -webkit-backdrop-filter: saturate(1.4) blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.header-row { display: flex; align-items: center; gap: 20px; min-height: 64px; position: relative; }
+.brand { font: 750 1.2rem/1 var(--f-display); text-decoration: none; letter-spacing: -.01em; margin-right: auto; }
+.brand span { color: var(--green); }
+.site-nav { display: flex; gap: 22px; font-size: .95rem; }
+.site-nav a { text-decoration: none; color: var(--muted); font-weight: 500; }
+.site-nav a:hover { color: var(--ink); }
+.menu-btn {
+  display: none; font: 600 .9rem/1 var(--f-body); color: var(--ink);
+  background: transparent; border: 1.5px solid var(--line); border-radius: 999px; padding: 9px 14px; cursor: pointer;
+}
+@media (max-width: 920px) {
+  .header-row { gap: 10px; }
+  .menu-btn { display: inline-flex; }
+  .site-nav {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; gap: 0; padding: 8px max(var(--gutter), env(safe-area-inset-right, 0px)) 16px max(var(--gutter), env(safe-area-inset-left, 0px));
+    background: var(--bg); border-bottom: 1px solid var(--line); box-shadow: var(--shadow);
+  }
+  .site-nav.open { display: flex; }
+  .site-nav a { padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 1.05rem; }
+}
+
+/* Hero */
+.hero { padding-block: clamp(40px, 7vw, 96px) clamp(48px, 7vw, 88px); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, .9fr); gap: clamp(32px, 6vw, 80px); align-items: center; }
+.hero-copy { display: grid; gap: 22px; min-width: 0; }
+.hero h1 {
+  font-size: clamp(2.5rem, 5.6vw, 4.7rem); line-height: 1.0; letter-spacing: -.03em; font-weight: 760;
+}
+mark {
+  color: inherit; background: linear-gradient(transparent 60%, var(--mark) 60%);
+  -webkit-box-decoration-break: clone; box-decoration-break: clone; padding: 0 .04em;
+}
+.lede { font-size: 1.16rem; max-width: 58ch; }
+.lede strong { font-weight: 700; }
+.sub { color: var(--muted); max-width: 58ch; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+.portrait { position: relative; isolation: isolate; margin: 0; padding: 0 16px 26px 0; justify-self: center; width: 100%; max-width: 440px; }
+.portrait-frame {
+  position: relative; border-radius: 22px; overflow: hidden; background: #fff;
+  box-shadow: var(--shadow); aspect-ratio: 3 / 4;
+}
+.portrait-frame img { width: 100%; height: 100%; object-fit: cover; }
+.portrait::before {
+  content: ""; position: absolute; inset: 30px 0 0 30px; border-radius: 22px;
+  background: var(--sakura); opacity: .55; z-index: -1;
+}
+.badge {
+  position: absolute; display: flex; align-items: center; gap: 8px;
+  background: var(--bg); color: var(--ink); border: 1px solid var(--line); box-shadow: var(--shadow);
+  border-radius: 999px; padding: 9px 14px; font: 600 .82rem/1.2 var(--f-body); max-width: 80%;
+}
+.badge .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--pk); flex: none; box-shadow: 0 0 0 4px color-mix(in srgb, var(--pk) 25%, transparent); }
+.badge-a { top: 18px; left: 12px; }
+.badge-b { bottom: 0; right: 12px; }
+.badge-b .jp { font-family: var(--f-jp); color: var(--red); }
+@media (max-width: 860px) {
+  .hero-grid { grid-template-columns: minmax(0, 1fr); }
+  .portrait { max-width: 380px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .rise { animation: rise .7s cubic-bezier(.2, .7, .2, 1) both; }
+  .rise.d1 { animation-delay: .08s; } .rise.d2 { animation-delay: .16s; } .rise.d3 { animation-delay: .24s; }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+}
+
+/* Trust strip */
+.trust { border-block: 1px solid var(--line); padding-block: 22px; }
+.trust-row { display: flex; flex-wrap: wrap; gap: 10px 26px; align-items: baseline; }
+.trust-label { font: 600 .74rem/1.4 var(--f-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.trust-names { display: flex; flex-wrap: wrap; gap: 6px 22px; font: 650 1.02rem/1.4 var(--f-display); }
+
+/* Numbers */
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+.stat { padding: 28px 24px 30px 0; border-bottom: 1px solid var(--line); display: grid; gap: 8px; align-content: start; }
+.stat:not(:nth-child(3n + 1)) { padding-left: 24px; border-left: 1px solid var(--line); }
+.stat b { font: 760 clamp(2.6rem, 5vw, 3.8rem)/1 var(--f-display); letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+.stat b small { font-size: .5em; color: var(--muted); font-weight: 600; letter-spacing: 0; }
+.stat span { color: var(--muted); font-size: .98rem; max-width: 30ch; }
+@media (max-width: 720px) {
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat, .stat:not(:nth-child(3n + 1)) { padding: 22px 14px 24px 0; border-left: 0; }
+  .stat:nth-child(even) { padding-left: 16px; border-left: 1px solid var(--line); }
+}
+
+/* Japan band */
+.band { background: var(--band); color: var(--band-ink); }
+.band .eyebrow { color: var(--sakura); }
+.band .intro, .band .muted { color: var(--band-muted); }
+.band .link { color: var(--band-ink); border-bottom-color: var(--sakura); }
+.jp-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(36px, 6vw, 80px); align-items: start; }
+.jp-copy { display: grid; gap: 20px; min-width: 0; }
+.jp-copy p { max-width: 60ch; }
+.jp-kanji { font-family: var(--f-jp); font-size: 1.05em; letter-spacing: .05em; }
+.venn { position: relative; width: 268px; max-width: 100%; height: 164px; margin-block: 8px 4px; }
+.venn .c {
+  position: absolute; top: 0; width: 164px; height: 164px; border-radius: 50%;
+  display: flex; align-items: center; color: #fff; font-weight: 700;
+}
+.venn .c-jp { left: 0; background: color-mix(in srgb, var(--red) 88%, transparent); justify-content: flex-start; padding-left: 30px; font-family: var(--f-jp); font-size: 1.25rem; }
+.venn .c-pk { left: 104px; background: color-mix(in srgb, var(--pk) 72%, transparent); justify-content: flex-end; padding-right: 22px; font-family: var(--f-ur); font-size: 1.05rem; }
+.venn-mid {
+  position: absolute; left: 134px; top: 50%; transform: translate(-50%, -50%); z-index: 2;
+  background: var(--band-ink); color: var(--band); border-radius: 999px; padding: 6px 10px;
+  font: 700 .66rem/1.15 var(--f-mono); letter-spacing: .06em; text-transform: uppercase; text-align: center; white-space: nowrap;
+}
+.facts { display: grid; gap: 10px; padding: 0; margin: 0; list-style: none; }
+.facts li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 10px; }
+.facts li::before { content: ""; width: 10px; height: 10px; margin-top: .55em; border-radius: 50%; background: var(--sakura); }
+.jp-photos { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 12px; }
+.jp-photos .zoom { border-radius: 12px; }
+.jp-photos .ph-a { grid-row: span 2; aspect-ratio: 3 / 4.1; }
+.jp-photos .ph-b, .jp-photos .ph-c { aspect-ratio: 4 / 3.05; }
+.jp-photos .ph-d { grid-column: 1 / -1; aspect-ratio: 16 / 8; }
+@media (max-width: 900px) { .jp-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* Zoomable images */
+.zoom {
+  display: block; width: 100%; padding: 0; border: 0; margin: 0; background: var(--surface);
+  cursor: zoom-in; overflow: hidden; position: relative; border-radius: 10px;
+}
+.zoom img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s cubic-bezier(.2, .7, .2, 1); }
+.zoom:hover img { transform: scale(1.035); }
+.zoom .cap {
+  position: absolute; inset: auto 0 0 0; padding: 26px 12px 10px; text-align: left;
+  font: 500 .8rem/1.35 var(--f-body); color: #fff;
+  background: linear-gradient(transparent, rgba(0, 0, 0, .62));
+}
+
+/* Leadership */
+.lead-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(36px, 6vw, 88px); align-items: start; }
+.lead-side { display: grid; gap: 22px; min-width: 0; }
+@media (min-width: 901px) and (min-height: 860px) { .lead-side { position: sticky; top: 96px; } }
+.lead-photo { aspect-ratio: 4 / 5; max-width: 320px; border-radius: var(--radius); }
+.lead-photo-cap { color: var(--muted); font-size: .9rem; margin-top: -10px; }
+.roles { display: grid; }
+.role { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 18px; padding-block: 26px; border-top: 1px solid var(--line); }
+.role:last-child { border-bottom: 1px solid var(--line); }
+.when { font: 500 .82rem/1.5 var(--f-mono); color: var(--muted); padding-top: 4px; font-variant-numeric: tabular-nums; }
+.role h3 { font-size: 1.32rem; line-height: 1.2; font-weight: 700; letter-spacing: -.01em; }
+.org { display: block; font: 500 .95rem/1.4 var(--f-body); color: var(--green); margin-top: 4px; }
+.role p { margin-top: 10px; color: var(--muted); }
+@media (max-width: 900px) { .lead-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 560px) { .role { grid-template-columns: minmax(0, 1fr); gap: 4px; } }
+
+/* Research */
+.research-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.card {
+  background: var(--surface); border-radius: var(--radius); padding: clamp(22px, 3vw, 32px);
+  display: grid; gap: 10px; align-content: start; min-width: 0;
+}
+.card .tag { font: 600 .74rem/1.4 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.card h3 { font-size: 1.36rem; line-height: 1.18; font-weight: 700; letter-spacing: -.01em; }
+.card p { color: var(--muted); }
+.card .big { font: 760 2.4rem/1 var(--f-display); color: var(--green); letter-spacing: -.02em; }
+@media (max-width: 760px) { .research-grid { grid-template-columns: minmax(0, 1fr); } }
+.pubs { margin-top: clamp(40px, 5vw, 64px); display: grid; gap: 0; }
+.pubs h3 { font-size: 1.5rem; margin-bottom: 14px; }
+.pub { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 18px; padding-block: 20px; border-top: 1px solid var(--line); }
+.pub:last-child { border-bottom: 1px solid var(--line); }
+.status { font: 600 .74rem/1.4 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; padding-top: 5px; }
+.status.ok { color: var(--green); }
+.status.sub { color: var(--muted); }
+.pub-title { font: 650 1.12rem/1.35 var(--f-display); }
+.pub-meta { color: var(--muted); font-size: .95rem; margin-top: 6px; }
+.pub-meta b { color: var(--ink); font-weight: 600; }
+@media (max-width: 560px) { .pub { grid-template-columns: minmax(0, 1fr); gap: 4px; } }
+
+/* Awards */
+.awards { display: grid; }
+.award { display: grid; grid-template-columns: 120px minmax(0, 1fr) auto; gap: 18px; align-items: baseline; padding-block: 18px; border-top: 1px solid var(--line); }
+.award:last-child { border-bottom: 1px solid var(--line); }
+.award .yr { font: 600 .9rem/1.4 var(--f-mono); color: var(--green); font-variant-numeric: tabular-nums; }
+.award h3 { font: 650 1.1rem/1.35 var(--f-display); }
+.award p { color: var(--muted); font-size: .95rem; margin-top: 3px; }
+.award .proof { font-size: .9rem; white-space: nowrap; display: flex; gap: 14px; }
+@media (max-width: 640px) {
+  .award { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .award .proof { margin-top: 6px; }
+}
+.certs-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-top: clamp(44px, 5vw, 64px); margin-bottom: 16px; }
+.certs-head h3 { font-size: 1.5rem; }
+.certs-head span { color: var(--muted); font-size: .9rem; }
+.certs { display: flex; gap: 14px; overflow-x: auto; padding-bottom: 12px; scroll-snap-type: x proximity; }
+.certs .zoom { flex: none; width: clamp(200px, 26vw, 270px); aspect-ratio: 4 / 3; scroll-snap-align: start; border: 1px solid var(--line); background: #fff; }
+.certs .zoom img { object-fit: contain; padding: 8px; }
+
+/* Gallery */
+.gallery { columns: 3 260px; column-gap: 14px; }
+.gallery .zoom { margin-bottom: 14px; break-inside: avoid; }
+.gallery .zoom img { height: auto; }
+
+/* Art */
+.art-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(8px, 1.6vw, 16px); }
+.art-item { display: grid; gap: 8px; margin: 0; min-width: 0; }
+.art-item .zoom { aspect-ratio: 1; }
+.art-item figcaption { font-size: .9rem; line-height: 1.35; }
+.art-item figcaption span { display: block; color: var(--muted); font: 500 .76rem/1.4 var(--f-mono); }
+
+/* Life */
+.life-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: center; }
+.life-photo { aspect-ratio: 16 / 10; border-radius: var(--radius); }
+.life-copy { display: grid; gap: 18px; min-width: 0; }
+.score { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+.score b { font: 780 clamp(3rem, 7vw, 4.6rem)/1 var(--f-display); letter-spacing: -.03em; color: var(--green); font-variant-numeric: tabular-nums; }
+.score span { color: var(--muted); max-width: 26ch; }
+@media (max-width: 800px) { .life-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* Journey */
+.journey { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(36px, 6vw, 80px); }
+.journey h3 { font-size: 1.5rem; margin-bottom: 8px; }
+.tl { list-style: none; margin: 0; padding: 0; }
+.tl li { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 16px; padding-block: 14px; border-top: 1px solid var(--line); }
+.tl .what { font-weight: 600; }
+.tl .where { display: block; color: var(--muted); font-size: .95rem; font-weight: 400; }
+.skills { display: grid; gap: 14px; margin-top: 36px; }
+.skill-row { display: grid; gap: 8px; }
+.skill-row b { font: 600 .74rem/1.4 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips span { border: 1px solid var(--line); border-radius: 999px; padding: 4px 11px; font-size: .9rem; }
+@media (max-width: 860px) { .journey { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 480px) { .tl li { grid-template-columns: minmax(0, 1fr); gap: 2px; } }
+
+/* Quote */
+.quote { text-align: left; max-width: 980px; }
+.quote blockquote { margin: 0; font: 650 clamp(1.8rem, 3.8vw, 3rem)/1.15 var(--f-display); letter-spacing: -.02em; text-wrap: balance; }
+.quote blockquote::before { content: "\201C"; display: block; color: var(--sakura); font-size: 2.2em; line-height: .6; margin-bottom: 8px; }
+.quote cite { display: block; margin-top: 20px; font: 500 .9rem/1.4 var(--f-mono); color: var(--muted); font-style: normal; }
+
+/* Contact */
+.contact-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: clamp(32px, 6vw, 80px); align-items: end; }
+.contact .h2 { font-size: clamp(2.2rem, 5vw, 4rem); }
+.contact-list { display: grid; gap: 0; }
+.contact-list > * { padding-block: 14px; border-top: 1px solid var(--band-line); display: flex; justify-content: space-between; gap: 12px; align-items: center; flex-wrap: wrap; }
+.contact-list > *:last-child { border-bottom: 1px solid var(--band-line); }
+.contact-list .k { font: 600 .74rem/1.4 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--band-muted); }
+.contact-list a { color: var(--band-ink); font-weight: 600; text-decoration: none; overflow-wrap: anywhere; }
+.contact-list a:hover { text-decoration: underline; text-decoration-color: var(--sakura); }
+.email-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.copy-btn {
+  font: 600 .78rem/1 var(--f-mono); letter-spacing: .06em; text-transform: uppercase;
+  background: transparent; color: var(--band-ink); border: 1px solid var(--band-line); border-radius: 999px; padding: 7px 11px; cursor: pointer;
+}
+.copy-btn:hover { border-color: var(--sakura); }
+.contact .cta-row .btn { background: var(--band-ink); color: var(--band); border-color: var(--band-ink); }
+.contact .cta-row .btn.ghost { background: transparent; color: var(--band-ink); border-color: var(--band-line); }
+@media (max-width: 860px) { .contact-grid { grid-template-columns: minmax(0, 1fr); } }
+
+footer { padding-block: 28px; color: var(--muted); font-size: .88rem; }
+footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+/* Lightbox */
+#lightbox {
+  border: 0; padding: 0; background: transparent; max-width: 100vw; max-height: 100vh;
+  width: 100%; height: 100%; color: #fff;
+}
+#lightbox::backdrop { background: rgba(6, 12, 9, .9); }
+#lightbox[open] { display: grid; place-items: center; }
+#lightbox figure { margin: 0; display: grid; gap: 12px; justify-items: center; padding: 56px max(64px, env(safe-area-inset-right, 0px)) 32px max(64px, env(safe-area-inset-left, 0px)); max-width: 100%; }
+#lb-img { max-height: calc(100vh - 150px); max-width: min(1200px, 100%); width: auto; border-radius: 8px; object-fit: contain; }
+#lb-cap { font-size: .95rem; text-align: center; max-width: 70ch; color: #e8e2e0; }
+.lb-btn {
+  position: fixed; background: rgba(255, 255, 255, .12); color: #fff; border: 0; cursor: pointer;
+  width: 46px; height: 46px; border-radius: 50%; font: 400 1.6rem/1 var(--f-body); display: grid; place-items: center;
+}
+.lb-btn:hover { background: rgba(255, 255, 255, .24); }
+.lb-close { top: calc(14px + env(safe-area-inset-top, 0px)); right: calc(14px + env(safe-area-inset-right, 0px)); }
+.lb-prev { left: calc(10px + env(safe-area-inset-left, 0px)); top: 50%; transform: translateY(-50%); }
+.lb-next { right: calc(10px + env(safe-area-inset-right, 0px)); top: 50%; transform: translateY(-50%); }
+@media (max-width: 560px) {
+  #lightbox figure { padding-inline: 12px; }
+  .lb-prev, .lb-next { top: auto; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); transform: none; }
+}
+</style>
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="#top">Muskaan Irfan<span>.</span></a>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <a href="#japan">Japan</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#research">Research</a>
+      <a href="#awards">Awards</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#art">Art</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-small" href="files/Muskaan-Irfan-CV.pdf" target="_blank" rel="noopener">View CV</a>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+  </div>
+</header>
+
+<main>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow rise">Data scientist · Mathematician · Researcher</p>
+      <h1 class="rise d1">Solving hard problems with data, and <mark>teaching hundreds of others to do the same.</mark></h1>
+      <p class="lede rise d2"><strong>Muskaan Irfan</strong> is a data scientist and mathematician from Pakistan. In 2026 the Government of Japan invited her to the University of Fukui as a JST Sakura Science visiting researcher. She holds an MS in Data Science from Air University, where she graduated as Silver Medalist, and a BS in Mathematics from Quaid-i-Azam University.</p>
+      <p class="sub rise d2">She has won Harvard's CS50x Puzzle Day three years in a row, led a section of Stanford's Code in Place, judged international hackathons and given more than 200 hours of volunteer teaching to students who could not afford classes. She is also a national badminton player.</p>
+      <div class="cta-row rise d3">
+        <a class="btn" href="files/Muskaan-Irfan-CV.pdf" target="_blank" rel="noopener">View my CV</a>
+        <a class="btn ghost" href="files/Muskaan-Irfan-Candidature.pdf" target="_blank" rel="noopener">Candidature file</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <figure class="portrait rise d1">
+      <div class="portrait-frame">
+        <img src="assets/img/portrait.jpg" width="900" height="1200" alt="Portrait of Muskaan Irfan">
+      </div>
+      <span class="badge badge-a"><span class="dot" aria-hidden="true"></span>Open to MS/PhD research positions</span>
+      <span class="badge badge-b"><span class="jp" lang="ja">福井</span>JST Sakura Science researcher, 2026</span>
+    </figure>
+  </div>
+</section>
+
+<!-- Trust strip -->
+<div class="trust">
+  <div class="wrap trust-row">
+    <span class="trust-label">Competed, taught and served with</span>
+    <span class="trust-names">
+      <span>Harvard CS50</span><span>Stanford Code in Place</span><span>MIT</span><span>Meta Hacker Cup</span><span>UC Berkeley</span><span>JST Sakura Science</span><span>Virufy</span><span>IEEE MedAI</span><span>NeurIPS</span>
+    </span>
+  </div>
+</div>
+
+<!-- Numbers -->
+<section class="section" aria-labelledby="numbers-h">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">By the numbers</p>
+      <h2 class="h2" id="numbers-h">A record built in the classroom, on the leaderboard and on the court.</h2>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>3×</b><span>Winner of Harvard's CS50x Puzzle Day, in 2024, 2025 and 2026</span></div>
+      <div class="stat"><b>114<small>/530+</small></b><span>Global rank among teams at the MIT Informatics Tournament 2025</span></div>
+      <div class="stat"><b>500+</b><span>Participants at her GenAI hackathon webinar</span></div>
+      <div class="stat"><b>100+</b><span>Hackathon projects evaluated as a judge and mentor</span></div>
+      <div class="stat"><b>200+</b><span>Hours of volunteer teaching for underprivileged students</span></div>
+      <div class="stat"><b>19<small>/21</small></b><span>State-level badminton matches won</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Japan -->
+<section class="band section" id="japan" aria-labelledby="japan-h">
+  <div class="wrap jp-grid">
+    <div class="jp-copy">
+      <p class="eyebrow"><span class="jp-kanji" lang="ja">福井</span> Fukui, Japan · 2026</p>
+      <h2 class="h2" id="japan-h">Invited to Japan as a Sakura Science researcher</h2>
+      <p>The Government of Japan invited Muskaan to the University of Fukui under the JST Sakura Science Program. There she worked on AI-driven tourism research with the Distributed Human Data Engine (DHDE).</p>
+      <ul class="facts">
+        <li><span>Combined AI-camera visitor counts, Japan Meteorological Agency weather data, route-search signals and tourism surveys.</span></li>
+        <li><span>Studied international visitor demand in Fukui and how weather keeps tourists away.</span></li>
+        <li><span>Used forecasting, statistical modelling and spatial analysis to find openings for regional tourism.</span></li>
+      </ul>
+      <p>She also gave a talk, <em>Tourism AI: Learn with the World</em>, on Fukui's tourism through Pakistani eyes and what goes on behind a real AI project. Japan's Tannan FM Magazine featured her contribution to the research.</p>
+      <div class="venn" role="img" aria-label="Two circles, Japan and Pakistan, overlapping at Learn with the World">
+        <span class="c c-jp" lang="ja">日本</span>
+        <span class="c c-pk" lang="ur">پاکستان</span>
+        <span class="venn-mid">Learn with<br>the World</span>
+      </div>
+      <p class="links">
+        <a class="link arrow" href="https://dhde-tourism-ai.github.io/dhde-app/" target="_blank" rel="noopener">Explore the DHDE project </a>
+        <a class="link arrow" href="https://www.linkedin.com/posts/muskaan03_research-japan-fukuiuniversity-ugcPost-7478345609628930048-YkTP/" target="_blank" rel="noopener">Magazine feature </a>
+        <a class="link arrow" href="https://drive.google.com/file/d/1-1uTiWRJ6uwO7HJpWGIfW1oe6TUt9ZmE/view" target="_blank" rel="noopener">Program certificate </a>
+        <a class="link arrow" href="https://ssp.jst.go.jp/en/" target="_blank" rel="noopener">About Sakura Science </a>
+      </p>
+    </div>
+    <div class="jp-photos">
+      <button class="zoom ph-a" type="button" data-group="japan" data-src="assets/img/fukui-keynote.jpg" data-cap="Presenting Tourism AI: Learn with the World at the University of Fukui, 2026">
+        <img src="assets/img/fukui-keynote.jpg" width="1200" height="1600" alt="Muskaan speaking with a microphone in front of her title slide, Tourism AI: Learn with the World">
+      </button>
+      <button class="zoom ph-b" type="button" data-group="japan" data-src="assets/img/fukui-audience.jpg" data-cap="Walking the audience through the visit and the AI project">
+        <img src="assets/img/fukui-audience.jpg" width="1400" height="1050" alt="Muskaan at the podium with a slide reading Our visit and Our AI project, audience in front" loading="lazy">
+      </button>
+      <button class="zoom ph-c" type="button" data-group="japan" data-src="assets/img/fukui-six-places.jpg" data-cap="Six places that stayed with us: highlights from Fukui">
+        <img src="assets/img/fukui-six-places.jpg" width="1400" height="1050" alt="A slide titled Six places that stayed with us, with Muskaan at the podium" loading="lazy">
+      </button>
+      <button class="zoom ph-d" type="button" data-group="japan" data-src="assets/img/magazine.jpg" data-cap="Featured in Japan's Tannan FM Magazine">
+        <img src="assets/img/magazine.jpg" width="1600" height="963" alt="Open pages of Tannan FM Magazine featuring Muskaan" loading="lazy">
+        <span class="cap">Featured in Tannan FM Magazine</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Leadership -->
+<section class="section" id="leadership" aria-labelledby="lead-h">
+  <div class="wrap lead-grid">
+    <div class="lead-side">
+      <p class="eyebrow">Leadership &amp; service</p>
+      <h2 class="h2" id="lead-h">Leading teams, classrooms and communities</h2>
+      <p class="intro">From Head Girl at school to judging international hackathons, Muskaan steps up to lead. She teaches, mentors and organizes across countries and time zones.</p>
+      <button class="zoom lead-photo" type="button" data-group="lead" data-src="assets/img/head-girl.jpg" data-cap="Head Girl at school, with a classmate">
+        <img src="assets/img/head-girl.jpg" width="900" height="1200" alt="Muskaan wearing a Head Girl sash, standing with a classmate" loading="lazy">
+      </button>
+      <p class="lead-photo-cap">Head Girl and prefect at school. Leading started early.</p>
+    </div>
+    <div class="roles">
+      <article class="role">
+        <p class="when">Feb 2024 – now</p>
+        <div>
+          <h3>STEM Program Manager <span class="org">iCode Guru · San Jose, CA (remote)</span></h3>
+          <p>Organizes and hosts weekly tech webinars with Silicon Valley engineers. Teaches Python, data structures, algorithms and maths to underprivileged students in their own language, and guides them into international hackathons and coding contests.</p>
+          <p class="links"><a class="link arrow" href="https://icode.guru/" target="_blank" rel="noopener">iCode Guru </a></p>
+        </div>
+      </article>
+      <article class="role">
+        <p class="when">Apr – May 2025</p>
+        <div>
+          <h3>Section Leader / Teaching Assistant <span class="org">Stanford University · Code in Place</span></h3>
+          <p>Taught Python to international students with Karel the Robot, and worked with peer mentors on new teaching methods.</p>
+          <p class="links"><a class="link arrow" href="https://www.linkedin.com/posts/muskaan-831133179_codeinplace-stanforduniversity-globalmentor-activity-7316801229718728706-ggVR" target="_blank" rel="noopener">See the announcement </a></p>
+        </div>
+      </article>
+      <article class="role">
+        <p class="when">Aug 2024 – now</p>
+        <div>
+          <h3>Tech Mentor &amp; Judge <span class="org">GenAI Hackathon · Pak-Angels, San Jose, CA</span></h3>
+          <p>Gave a webinar on hackathon strategy, ideas, teamwork and pitching to 500+ participants. Guided teams building RAG systems and chatbots, and evaluated 100+ projects.</p>
+          <p class="links">
+            <a class="link arrow" href="https://www.youtube.com/watch?v=SDbo38Wre6I&amp;t=132s" target="_blank" rel="noopener">Watch the webinar </a>
+            <a class="link arrow" href="https://www.linkedin.com/posts/muskaan03_generativeai-generativeai-hackathon-activity-7309991696799277057-qxS2" target="_blank" rel="noopener">Hackathon post </a>
+          </p>
+        </div>
+      </article>
+      <article class="role">
+        <p class="when">2026</p>
+        <div>
+          <h3>Program Committee Member <span class="org">IEEE MedAI 2026</span></h3>
+          <p>Selected to peer-review medical AI research. She has also reviewed 10+ papers for conferences and NeurIPS workshops, and speaks at academic and research events.</p>
+          <p class="links">
+            <a class="link arrow" href="https://drive.google.com/file/d/19-4-_sw9BPHu1FXLA-F9q8oThoLj9DUy/view?usp=sharing" target="_blank" rel="noopener">IEEE MedAI </a>
+            <a class="link arrow" href="https://drive.google.com/file/d/1ad-PGoF4ii3JGfLn7kxbVH6HC7BKL6BK/view?usp=sharing" target="_blank" rel="noopener">Reviewer record </a>
+          </p>
+        </div>
+      </article>
+      <article class="role">
+        <p class="when">Jan 2023</p>
+        <div>
+          <h3>Team Lead <span class="org">Cohere Hackathon · lablab.ai</span></h3>
+          <p>Led a four-person team from Pakistan, the USA and India. Built an AI job-interview assistant that analyzes spoken answers and facial expressions, and led the design of its AI engine.</p>
+          <p class="links">
+            <a class="link arrow" href="https://lablab.ai/event/cohere-hackathon/confidence-builder-with-ai/ai-job-interview-assistant" target="_blank" rel="noopener">Project </a>
+            <a class="link arrow" href="https://drive.google.com/file/d/1IISwDfqkVKrzR6sKzWlvHCg_8LYx05xR/view?usp=share_link" target="_blank" rel="noopener">Presentation </a>
+          </p>
+        </div>
+      </article>
+      <article class="role">
+        <p class="when">Dec 2022</p>
+        <div>
+          <h3>AI Product Contributor <span class="org">OpenAI Hackathon · lablab.ai</span></h3>
+          <p>Built the core recommendation system for Bibliotopia, a GPT-3 bookshop that supports literacy programs, with a six-person team from four countries.</p>
+          <p class="links">
+            <a class="link arrow" href="https://lablab.ai/event/openai-whisper-gpt3-codex-dalle2-hackathon/impact/bibliotopia" target="_blank" rel="noopener">Project </a>
+            <a class="link arrow" href="https://drive.google.com/file/d/1xNrZA5JMxwIS5Pr0KUHGOoj1Iy_C9gKd/view?usp=share_link" target="_blank" rel="noopener">Presentation </a>
+          </p>
+        </div>
+      </article>
+      <article class="role">
+        <p class="when">Workshops</p>
+        <div>
+          <h3>Organizer &amp; speaker</h3>
+          <p>Ran 6-hour workshops on Python data visualization for mathematicians, a webinar on how to join hackathons, a session on unity in diversity with the Centre for Peace Education Pakistan, and a workshop on startups for applied researchers.</p>
+          <p class="links">
+            <a class="link arrow" href="https://drive.google.com/drive/folders/1Qb-4OzxIICc9gx475vhleiFLkwvkrXG2?usp=sharing" target="_blank" rel="noopener">Data viz workshop </a>
+            <a class="link arrow" href="https://drive.google.com/file/d/1rZxzmQTj1d7QQ6mG1GUA3BAeT-AGqtdx/view?usp=share_link" target="_blank" rel="noopener">Unity in Diversity </a>
+            <a class="link arrow" href="https://drive.google.com/file/d/1sAt0UbyerKqdUqsIfpPmyt8PTQ3u5zNx/view?usp=share_link" target="_blank" rel="noopener">Startup workshop </a>
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Research -->
+<section class="section" id="research" aria-labelledby="research-h" style="background: var(--surface);">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Research</p>
+      <h2 class="h2" id="research-h">Research in health, human movement and tourism</h2>
+      <p class="intro">Deep learning on sensor data, AI for health screening, and data science for regional tourism. Grounded in a mathematics degree and a physics internship.</p>
+    </div>
+    <div class="research-grid">
+      <article class="card" style="background: var(--bg);">
+        <p class="tag">MS thesis · Air University · 2025</p>
+        <h3>Advancing Human Activity Recognition Through Deep Learning and Sensor Fusion</h3>
+        <p class="big">97%</p>
+        <p>Test accuracy from an LSTM model for multivariate sensor time series, built on careful preprocessing, feature extraction and sensor fusion. She also designed an open HAR dataset.</p>
+        <p class="links"><a class="link arrow" href="https://drive.google.com/file/d/15M9HAtAl3dzkTBxUasQPztmEGw9QwAa9/view?usp=sharing" target="_blank" rel="noopener">Read the thesis </a></p>
+      </article>
+      <article class="card" style="background: var(--bg);">
+        <p class="tag">Virufy, California · Jun 2025 – now</p>
+        <h3>ML/AI Research Intern in global health</h3>
+        <p>Second author on an ongoing paper, where she led the quantitative and statistical analysis. Supports literature reviews, methodology and manuscript writing for healthcare AI research.</p>
+        <p>Recognized with Virufy's <strong style="color: var(--ink);">Grants Excellence and Operations Award</strong>, 2026.</p>
+        <p class="links">
+          <a class="link arrow" href="https://virufy.org/en/" target="_blank" rel="noopener">Virufy </a>
+          <a class="link arrow" href="https://www.linkedin.com/in/muskaan03/details/honors/" target="_blank" rel="noopener">The award </a>
+        </p>
+      </article>
+      <article class="card" style="background: var(--bg);">
+        <p class="tag">University of Fukui · 2026</p>
+        <h3>Tourism intelligence with the Distributed Human Data Engine</h3>
+        <p>Visitor-demand forecasting, statistical modelling and spatial analysis to understand weather-related barriers to tourism in Fukui.</p>
+        <p class="links"><a class="link arrow" href="https://dhde-tourism-ai.github.io/dhde-app/" target="_blank" rel="noopener">DHDE app </a></p>
+      </article>
+      <article class="card" style="background: var(--bg);">
+        <p class="tag">National Centre for Physics · 2022</p>
+        <h3>Research Intern in cosmology and special relativity</h3>
+        <p>One of two students chosen from the physics and applied mathematics departments, after placing first in Special Relativity. Ran simulations in MATLAB and Python and analyzed cosmic microwave background data with CAMB and CLASS.</p>
+      </article>
+    </div>
+
+    <div class="pubs">
+      <h3>Publications</h3>
+      <div class="pub">
+        <p class="status ok">Published 2025</p>
+        <div>
+          <p class="pub-title">Pneumonia and COPD in Middle Eastern Older Adults: Current Burden and Future Opportunities</p>
+          <p class="pub-meta">Sulthan N., Daryanani A., Dharmi S., May G., <b>Muskaan</b>, Sreekumar G., Saito R., Amer S., Ahmed I., Aslam A. <em>International Journal of Applied Technology in Medical Sciences</em>, 4(2), 4–25. <a class="link" href="https://doi.org/10.54878/44jjb542" target="_blank" rel="noopener">doi:10.54878/44jjb542</a></p>
+        </div>
+      </div>
+      <div class="pub">
+        <p class="status sub">Submitted 2026</p>
+        <div>
+          <p class="pub-title">From Volunteer to Vocation: The Career Impact of Skill and Network Development in a Global Health Technology Nonprofit</p>
+          <p class="pub-meta">Khanzada A., <b>Muskaan</b>, MacCabe L. Submitted to <em>Journal of International Training and Development</em>. <a class="link" href="https://doi.org/10.5281/zenodo.19883684" target="_blank" rel="noopener">doi:10.5281/zenodo.19883684</a></p>
+        </div>
+      </div>
+      <div class="pub">
+        <p class="status sub">Submitted 2026</p>
+        <div>
+          <p class="pub-title">Acoustic Phenotyping of Coughs Predicts COVID-19 Screening Accuracy</p>
+          <p class="pub-meta">Khanzada A., Atlas L., Rasmussen N., Khan F., <b>Muskaan</b>. Submitted to <em>Journal of Artificial Intelligence Research</em>. <a class="link" href="https://drive.google.com/file/d/11U6GAJ4BjvLJw9irg6xq3cnyGvZ2qQ7g/view?usp=sharing" target="_blank" rel="noopener">PDF</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Awards -->
+<section class="section" id="awards" aria-labelledby="awards-h">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Awards &amp; competitions</p>
+      <h2 class="h2" id="awards-h">Proven against the best, year after year</h2>
+    </div>
+    <div class="awards">
+      <div class="award">
+        <p class="yr">2024–26</p>
+        <div><h3>Winner, CS50x Puzzle Day · Harvard University</h3><p>Three years running. Her team solved all 9 puzzles.</p></div>
+        <p class="proof"><a class="link arrow" href="https://www.linkedin.com/feed/update/urn:li:activity:7448640415182016512/" target="_blank" rel="noopener">Proof </a></p>
+      </div>
+      <div class="award">
+        <p class="yr">2026</p>
+        <div><h3>Grants Excellence and Operations Award · Virufy, USA</h3><p>For her contributions as an ML/AI researcher.</p></div>
+        <p class="proof"><a class="link arrow" href="https://www.linkedin.com/in/muskaan03/details/honors/" target="_blank" rel="noopener">Proof </a></p>
+      </div>
+      <div class="award">
+        <p class="yr">2026</p>
+        <div><h3>Featured in Tannan FM Magazine · Fukui, Japan</h3><p>For contributions to international research and collaborative innovation.</p></div>
+        <p class="proof"><a class="link arrow" href="https://www.linkedin.com/posts/muskaan03_research-japan-fukuiuniversity-ugcPost-7478345609628930048-YkTP/" target="_blank" rel="noopener">Proof </a></p>
+      </div>
+      <div class="award">
+        <p class="yr">2025</p>
+        <div><h3>114th of 530+ teams · MIT Informatics Tournament</h3><p>Global ranking in MIT's winter contest.</p></div>
+        <p class="proof"><a class="link arrow" href="https://www.linkedin.com/posts/muskaan-831133179_114th-mitwintercontest2025-codingachievement-activity-7287550333180878848-rdhl" target="_blank" rel="noopener">Proof </a></p>
+      </div>
+      <div class="award">
+        <p class="yr">2025</p>
+        <div><h3>Top 29% of 15,000+ · Meta Hacker Cup, Round 1</h3><p>And 6th in Pakistan (top 3% globally) in the Practice Round.</p></div>
+        <p class="proof">
+          <a class="link arrow" href="https://www.linkedin.com/posts/muskaan03_roundabr1-metahackercup-competitiveprogramming-activity-7388501265561075712-3ZPu" target="_blank" rel="noopener">Round 1 </a>
+          <a class="link arrow" href="https://www.linkedin.com/posts/muskaan03_metahackercup-competitiveprogramming-coding-activity-7384881621528875008-xeZP" target="_blank" rel="noopener">Practice </a>
+        </p>
+      </div>
+      <div class="award">
+        <p class="yr">2025</p>
+        <div><h3>2nd among female coders in Pakistan · Advent of Code</h3><p>12th overall on the leaderboard.</p></div>
+        <p class="proof"><a class="link arrow" href="https://drive.google.com/file/d/13ADmL_YXOa7j2upbojECb66BnC4ClG-2/view?usp=sharing" target="_blank" rel="noopener">Proof </a></p>
+      </div>
+      <div class="award">
+        <p class="yr">2024</p>
+        <div><h3>102nd of 860+ teams · UC Berkeley Calico Coding Competition</h3><p>Global rank.</p></div>
+        <p class="proof"><a class="link arrow" href="https://www.linkedin.com/posts/muskaan-831133179_calico-calico-codecrushers-activity-7264755935133212675-vwyJ" target="_blank" rel="noopener">Proof </a></p>
+      </div>
+      <div class="award">
+        <p class="yr">2022</p>
+        <div><h3>Appreciation Award · Fixit</h3><p>For volunteer work in Fixit's student mentorship program.</p></div>
+        <p class="proof"><a class="link arrow" href="https://drive.google.com/file/d/1rmAa2jLeBWnDCkYUMyWxuKtbHqVFugKB/view?usp=share_link" target="_blank" rel="noopener">Proof </a></p>
+      </div>
+      <div class="award">
+        <p class="yr">2021</p>
+        <div><h3>Runner-up · International Youth Math Challenge</h3><p>Represented her university and won prize money.</p></div>
+        <p class="proof"><a class="link arrow" href="https://drive.google.com/file/d/1rRXc57rVdH64RLEEt7xBiS8bTzlML1X8/view?usp=share_link" target="_blank" rel="noopener">Proof </a></p>
+      </div>
+      <div class="award">
+        <p class="yr">MS</p>
+        <div><h3>Silver Medalist · Air University</h3><p>First place in both Statistical &amp; Mathematical Methods for Data Analysis and Machine Learning, across five Creative Technologies departments.</p></div>
+        <p class="proof"></p>
+      </div>
+      <div class="award">
+        <p class="yr">Since school</p>
+        <div><h3>Merit scholarship holder</h3><p>Every year from elementary school through her master's degree.</p></div>
+        <p class="proof"></p>
+      </div>
+    </div>
+
+    <div class="certs-head">
+      <h3>Certificates</h3>
+      <span>Tap a certificate to enlarge it</span>
+    </div>
+    <div class="certs">
+      <button class="zoom" type="button" data-group="certs" data-src="assets/certs/cs50-2025.jpg" data-cap="Harvard CS50x Puzzle Day 2025: solved all 9 puzzles"><img src="assets/certs/cs50-2025.jpg" width="887" height="676" alt="Harvard CS50x Puzzle Day 2025 certificate" loading="lazy"></button>
+      <button class="zoom" type="button" data-group="certs" data-src="assets/certs/cs50-2024.jpg" data-cap="Harvard CS50x Puzzle Day 2024: solved all 9 puzzles"><img src="assets/certs/cs50-2024.jpg" width="849" height="651" alt="Harvard CS50x Puzzle Day 2024 certificate" loading="lazy"></button>
+      <button class="zoom" type="button" data-group="certs" data-src="assets/certs/genai-mentor.jpg" data-cap="Gen AI Application Instructor/Mentor Certificate, Pakistan Engineering Council with Pak-Angels and iCode Guru, 2025"><img src="assets/certs/genai-mentor.jpg" width="947" height="635" alt="Gen AI Application Instructor and Mentor certificate" loading="lazy"></button>
+      <button class="zoom" type="button" data-group="certs" data-src="assets/certs/cohere-hackathon.jpg" data-cap="Certificate of Completion, Cohere Hackathon, lablab.ai, 2023"><img src="assets/certs/cohere-hackathon.jpg" width="707" height="1000" alt="Cohere Hackathon certificate of completion" loading="lazy"></button>
+      <button class="zoom" type="button" data-group="certs" data-src="assets/certs/openai-hackathon.jpg" data-cap="Certificate of Completion, OpenAI Whisper, GPT-3 and Codex Hackathon, lablab.ai, 2022"><img src="assets/certs/openai-hackathon.jpg" width="707" height="1000" alt="OpenAI hackathon certificate of completion" loading="lazy"></button>
+      <button class="zoom" type="button" data-group="certs" data-src="assets/certs/iymc.jpg" data-cap="International Youth Math Challenge, 2021"><img src="assets/certs/iymc.jpg" width="741" height="519" alt="International Youth Math Challenge certificate" loading="lazy"></button>
+      <button class="zoom" type="button" data-group="certs" data-src="assets/certs/fixit.jpg" data-cap="Fixit Certificate of Appreciation, 2022"><img src="assets/certs/fixit.jpg" width="422" height="304" alt="Fixit certificate of appreciation" loading="lazy"></button>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="section" id="gallery" aria-labelledby="gallery-h" style="padding-top: 0;">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Gallery</p>
+      <h2 class="h2" id="gallery-h">In action</h2>
+      <p class="intro">On stage in Japan, leading at school, and the moments in between. Tap any photo to see it larger.</p>
+    </div>
+    <div class="gallery">
+      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/fukui-talk.jpg" data-cap="Sharing Fukui's tourism through Pakistani eyes, University of Fukui">
+        <img src="assets/img/fukui-talk.jpg" width="1050" height="1400" alt="Muskaan presenting in front of her title slide" loading="lazy"><span class="cap">Sharing Fukui through Pakistani eyes</span>
+      </button>
+      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/fukui-compare.jpg" data-cap="Fukui and Pakistan side by side in her talk">
+        <img src="assets/img/fukui-compare.jpg" width="1400" height="1050" alt="Slide comparing Fukui and Pakistan while Muskaan speaks at the podium" loading="lazy"><span class="cap">Fukui and Pakistan, side by side</span>
+      </button>
+      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/graduation.jpg" data-cap="Graduation day, BS Mathematics, Quaid-i-Azam University, Class of 2022">
+        <img src="assets/img/graduation.jpg" width="933" height="1400" alt="Muskaan in graduation cap and gown with a Class of 2022 stole" loading="lazy"><span class="cap">Graduation, Class of 2022</span>
+      </button>
+      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/fukui-title.jpg" data-cap="Opening her talk at the JST Sakura Science Program, University of Fukui">
+        <img src="assets/img/fukui-title.jpg" width="792" height="1400" alt="Muskaan opening her talk beside the title slide" loading="lazy"><span class="cap">Opening the talk in Fukui</span>
+      </button>
+      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/school-leaders.jpg" data-cap="With her school during her Head Girl years">
+        <img src="assets/img/school-leaders.jpg" width="1040" height="780" alt="Large group photo of students in school uniform" loading="lazy"><span class="cap">Head Girl years</span>
+      </button>
+      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/fukui-team.jpg" data-cap="After the talk in Fukui">
+        <img src="assets/img/fukui-team.jpg" width="808" height="1400" alt="Muskaan with two fellow participants after the talk" loading="lazy"><span class="cap">After the talk in Fukui</span>
+      </button>
+      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/fukui-podium.jpg" data-cap="At the podium, University of Fukui">
+        <img src="assets/img/fukui-podium.jpg" width="787" height="1400" alt="Muskaan speaking at a wooden podium" loading="lazy"><span class="cap">At the podium</span>
+      </button>
+      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/recognition.jpg" data-cap="Celebrating with classmates and a teacher at school">
+        <img src="assets/img/recognition.jpg" width="1280" height="720" alt="Muskaan holding a gift with classmates and a teacher" loading="lazy"><span class="cap">School celebrations</span>
+      </button>
+      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/fukui-mic.jpg" data-cap="On stage at the University of Fukui, 2026">
+        <img src="assets/img/fukui-mic.jpg" width="792" height="1400" alt="Muskaan speaking into a microphone on stage" loading="lazy"><span class="cap">On stage in Fukui</span>
+      </button>
+      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/badminton.jpg" data-cap="Badminton, her sport since college">
+        <img src="assets/img/badminton.jpg" width="675" height="1200" alt="Muskaan holding a badminton racket in a garden" loading="lazy"><span class="cap">Badminton since college</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Life -->
+<section class="section" aria-labelledby="life-h" style="background: var(--surface);">
+  <div class="wrap life-grid">
+    <button class="zoom life-photo" type="button" data-group="life" data-src="assets/img/badminton-court.jpg" data-cap="National badminton player: 19 wins in 21 state-level matches">
+      <img src="assets/img/badminton-court.jpg" width="1400" height="788" alt="Muskaan holding a badminton racket in the evening" loading="lazy">
+    </button>
+    <div class="life-copy">
+      <p class="eyebrow">Beyond the screen</p>
+      <h2 class="h2" id="life-h">A national badminton player</h2>
+      <div class="score"><b>19–2</b><span>Her record across 21 state-level matches</span></div>
+      <p class="intro">She represented Quaid-i-Azam University at the National Olympics. On the court and in code she brings the same focus, strategy and resilience.</p>
+      <p class="intro">She also writes about technology, data science and algorithms for a wide audience on LinkedIn.</p>
+      <p class="links"><a class="link arrow" href="https://www.linkedin.com/in/muskaan03/recent-activity/articles/" target="_blank" rel="noopener">Read her articles </a></p>
+    </div>
+  </div>
+</section>
+
+<!-- Art -->
+<section class="section" id="art" aria-labelledby="art-h">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Art</p>
+      <h2 class="h2" id="art-h">Portraits, calligraphy and sketches</h2>
+      <p class="intro">Muskaan has drawn since she was young. During her BS she paid her own way by making portraits, calligraphy and sketches on commission.</p>
+    </div>
+    <div class="art-grid">
+      <figure class="art-item"><button class="zoom" type="button" data-group="art" data-src="assets/art/sketch-of-gratitude.jpg" data-cap="Sketch of Gratitude, 2022"><img src="assets/art/sketch-of-gratitude.jpg" width="900" height="900" alt="Portrait sketch, Sketch of Gratitude" loading="lazy"></button><figcaption>Sketch of Gratitude<span>2022</span></figcaption></figure>
+      <figure class="art-item"><button class="zoom" type="button" data-group="art" data-src="assets/art/captured-in-pencil.jpg" data-cap="Captured in Pencil, 2021"><img src="assets/art/captured-in-pencil.jpg" width="720" height="733" alt="Pencil drawing of a face in profile, Captured in Pencil" loading="lazy"></button><figcaption>Captured in Pencil<span>2021</span></figcaption></figure>
+      <figure class="art-item"><button class="zoom" type="button" data-group="art" data-src="assets/art/spectrum-woman.jpg" data-cap="Spectrum Woman, 2023"><img src="assets/art/spectrum-woman.jpg" width="900" height="900" alt="Colourful painting, Spectrum Woman, hanging on a wall" loading="lazy"></button><figcaption>Spectrum Woman<span>2023</span></figcaption></figure>
+      <figure class="art-item"><button class="zoom" type="button" data-group="art" data-src="assets/img/portrait-gift.jpg" data-cap="Dr. Zafar's Portrait, 2025: presented to Dr. Zafar"><img src="assets/img/portrait-gift.jpg" width="741" height="1008" alt="Muskaan presenting a painted portrait to Dr. Zafar" loading="lazy"></button><figcaption>Dr. Zafar's Portrait<span>2025</span></figcaption></figure>
+      <figure class="art-item"><button class="zoom" type="button" data-group="art" data-src="assets/art/story-in-hues.jpg" data-cap="Story in Hues, 2023"><img src="assets/art/story-in-hues.jpg" width="672" height="900" alt="Bright painting of a dancer in a flowing dress, Story in Hues" loading="lazy"></button><figcaption>Story in Hues<span>2023</span></figcaption></figure>
+      <figure class="art-item"><button class="zoom" type="button" data-group="art" data-src="assets/art/echoes-of-mystic-night.jpg" data-cap="Echoes of Mystic Night, 2025"><img src="assets/art/echoes-of-mystic-night.jpg" width="646" height="900" alt="Dark painting with a golden moon, Echoes of Mystic Night" loading="lazy"></button><figcaption>Echoes of Mystic Night<span>2025</span></figcaption></figure>
+      <figure class="art-item"><button class="zoom" type="button" data-group="art" data-src="assets/art/honoring-the-teacher.jpg" data-cap="Honoring the Teacher, 2023"><img src="assets/art/honoring-the-teacher.jpg" width="900" height="809" alt="Framed portrait, Honoring the Teacher" loading="lazy"></button><figcaption>Honoring the Teacher<span>2023</span></figcaption></figure>
+      <figure class="art-item"><button class="zoom" type="button" data-group="art" data-src="assets/art/letters-with-soul.jpg" data-cap="Letters with Soul, 2024"><img src="assets/art/letters-with-soul.jpg" width="640" height="540" alt="Spiral calligraphy, Letters with Soul" loading="lazy"></button><figcaption>Letters with Soul<span>2024</span></figcaption></figure>
+      <figure class="art-item"><button class="zoom" type="button" data-group="art" data-src="assets/art/moment-frozen-in-graphite.jpg" data-cap="Moment Frozen in Graphite, 2025"><img src="assets/art/moment-frozen-in-graphite.jpg" width="605" height="376" alt="Graphite drawing of an eye, Moment Frozen in Graphite" loading="lazy"></button><figcaption>Moment Frozen in Graphite<span>2025</span></figcaption></figure>
+    </div>
+    <p class="links" style="margin-top: 22px;"><a class="link arrow" href="https://drive.google.com/drive/folders/1BMOLLrTGntJXVoPIb1mMBEJd0IZ6i-oW?usp=sharing" target="_blank" rel="noopener">See more of her artwork </a></p>
+  </div>
+</section>
+
+<!-- Journey -->
+<section class="section" id="journey" aria-labelledby="journey-h" style="padding-top: 0;">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Journey</p>
+      <h2 class="h2" id="journey-h">Experience and education</h2>
+    </div>
+    <div class="journey">
+      <div>
+        <h3>Experience</h3>
+        <ol class="tl">
+          <li><span class="when">Sep 2026 – now</span><span class="what">AI/ML Researcher<span class="where">JST Sakura Science Program, University of Fukui, Japan</span></span></li>
+          <li><span class="when">Jun 2025 – now</span><span class="what">ML/AI Research Intern<span class="where">Virufy, California (remote)</span></span></li>
+          <li><span class="when">Apr – May 2025</span><span class="what">Section Leader / Teaching Assistant<span class="where">Stanford Code in Place (remote)</span></span></li>
+          <li><span class="when">Aug 2024 – now</span><span class="what">Tech Mentor &amp; Judge<span class="where">GenAI Hackathon, Pak-Angels, San Jose (remote)</span></span></li>
+          <li><span class="when">Feb 2024 – now</span><span class="what">STEM Program Manager<span class="where">iCode Guru, San Jose (remote)</span></span></li>
+          <li><span class="when">Feb – Aug 2023</span><span class="what">Mathematics Lecturer<span class="where">IBA Public School &amp; College, Sukkur</span></span></li>
+          <li><span class="when">Aug – Sep 2022</span><span class="what">Research Intern<span class="where">National Centre for Physics, Islamabad</span></span></li>
+        </ol>
+      </div>
+      <div>
+        <h3>Education</h3>
+        <ol class="tl">
+          <li><span class="when">2023 – 2025</span><span class="what">MS Data Science · Silver Medalist<span class="where">Air University · CGPA 3.68/4 · Merit scholarship</span></span></li>
+          <li><span class="when">2018 – 2022</span><span class="what">BS Mathematics<span class="where">Quaid-i-Azam University · Merit scholarship</span></span></li>
+        </ol>
+        <div class="skills">
+          <div class="skill-row"><b>Languages</b><div class="chips"><span>Python</span><span>C++</span><span>R</span></div></div>
+          <div class="skill-row"><b>Machine learning</b><div class="chips"><span>PyTorch</span><span>TensorFlow</span><span>Keras</span><span>scikit-learn</span><span>Hugging Face</span><span>NLTK</span></div></div>
+          <div class="skill-row"><b>Data &amp; big data</b><div class="chips"><span>Pandas</span><span>NumPy</span><span>SciPy</span><span>PySpark</span><span>Hadoop</span><span>Hive</span><span>PostgreSQL</span><span>PostGIS</span></div></div>
+          <div class="skill-row"><b>Visualization &amp; tools</b><div class="chips"><span>Matplotlib</span><span>Seaborn</span><span>Tableau</span><span>Power BI</span><span>MATLAB</span><span>LaTeX</span><span>GitHub</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quote -->
+<section class="section" aria-label="Quote" style="padding-top: 0;">
+  <div class="wrap">
+    <figure class="quote" style="margin: 0;">
+      <blockquote>I aim not just to learn, but to create, challenge, and contribute to the frontiers of knowledge.</blockquote>
+      <cite>Muskaan Irfan</cite>
+    </figure>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="band section contact" id="contact" aria-labelledby="contact-h">
+  <div class="wrap contact-grid">
+    <div style="display: grid; gap: 22px; min-width: 0;">
+      <p class="eyebrow">Contact</p>
+      <h2 class="h2" id="contact-h">Looking for a researcher, a speaker or a hackathon judge?</h2>
+      <p class="intro">Muskaan is open to MS/PhD research positions, talks, mentoring and collaborations.</p>
+      <div class="cta-row">
+        <a class="btn" href="files/Muskaan-Irfan-CV.pdf" target="_blank" rel="noopener">View my CV</a>
+        <a class="btn ghost" href="files/Muskaan-Irfan-Candidature.pdf" target="_blank" rel="noopener">Candidature file</a>
+      </div>
+    </div>
+    <div class="contact-list">
+      <div>
+        <span class="k">Email</span>
+        <span class="email-row"><a id="email" href="mailto:muskaanirfan03@gmail.com">muskaanirfan03@gmail.com</a><button class="copy-btn" id="copy-email" type="button">Copy</button></span>
+      </div>
+      <div><span class="k">LinkedIn</span><a class="arrow" href="https://www.linkedin.com/in/muskaan03/" target="_blank" rel="noopener">in/muskaan03 </a></div>
+      <div><span class="k">GitHub</span><a class="arrow" href="https://github.com/Muskaan322" target="_blank" rel="noopener">Muskaan322 </a></div>
+      <div><span class="k">LeetCode</span><a class="arrow" href="https://leetcode.com/u/Muskaan03/" target="_blank" rel="noopener">Muskaan03 </a></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Muskaan Irfan</span>
+    <a class="link" href="#top">Back to top</a>
+  </div>
+</footer>
+
+<dialog id="lightbox" aria-label="Photo viewer">
+  <figure>
+    <img id="lb-img" src="data:," alt="">
+    <figcaption id="lb-cap"></figcaption>
+  </figure>
+  <button class="lb-btn lb-prev" id="lb-prev" type="button" aria-label="Previous photo">‹</button>
+  <button class="lb-btn lb-next" id="lb-next" type="button" aria-label="Next photo">›</button>
+  <button class="lb-btn lb-close" id="lb-close" type="button" aria-label="Close">×</button>
+</dialog>
+
+<script>
+(function () {
+  // Mobile menu
+  var nav = document.getElementById('site-nav');
+  var menuBtn = document.getElementById('menu-btn');
+  menuBtn.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.closest('a')) { nav.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); }
+  });
+
+  // Copy email
+  var copyBtn = document.getElementById('copy-email');
+  var email = document.getElementById('email');
+  copyBtn.addEventListener('click', function () {
+    var done = function (label) { copyBtn.textContent = label; setTimeout(function () { copyBtn.textContent = 'Copy'; }, 1800); };
+    var fallback = function () {
+      var range = document.createRange(); range.selectNodeContents(email);
+      var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range);
+      done('Press Ctrl+C');
+    };
+    try {
+      navigator.clipboard.writeText(email.textContent).then(function () { done('Copied'); }, fallback);
+    } catch (err) { fallback(); }
+  });
+
+  // Lightbox
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lb-img');
+  var lbCap = document.getElementById('lb-cap');
+  var group = [], idx = 0;
+  function show(i) {
+    idx = (i + group.length) % group.length;
+    var b = group[idx];
+    lbImg.src = b.dataset.src;
+    lbImg.alt = b.querySelector('img').alt;
+    lbCap.textContent = b.dataset.cap || '';
+    var many = group.length > 1;
+    document.getElementById('lb-prev').hidden = !many;
+    document.getElementById('lb-next').hidden = !many;
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('.zoom');
+    if (!b) return;
+    group = Array.prototype.slice.call(document.querySelectorAll('.zoom[data-group="' + b.dataset.group + '"]'));
+    show(group.indexOf(b));
+    if (typeof lb.showModal === 'function') lb.showModal(); else lb.setAttribute('open', '');
+  });
+  document.getElementById('lb-prev').addEventListener('click', function () { show(idx - 1); });
+  document.getElementById('lb-next').addEventListener('click', function () { show(idx + 1); });
+  document.getElementById('lb-close').addEventListener('click', function () { lb.close(); });
+  lb.addEventListener('click', function (e) { if (e.target === lb || e.target.tagName === 'FIGURE') lb.close(); });
+  lb.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') show(idx - 1);
+    if (e.key === 'ArrowRight') show(idx + 1);
+  });
+})();
+</script>
+</body>
+</html>
