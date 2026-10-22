@@ -17,31 +17,35 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&text=%E7%A6%8F%E4%BA%95%E6%97%A5%E6%9C%AC%E6%A1%9C&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@600&text=%D9%BE%D8%A7%DA%A9%D8%B3%D8%AA%D8%A7%D9%86&display=swap">
 <style>
-/* Layout: an editorial one-column story at a 1160px measure. Sakura palette: blossom pink on blush white, with two full-bleed indigo "night" bands (Japan, Contact) carrying the boldness. */
+/* Layout: an editorial one-column story at a 1160px measure. Bold palette: cobalt and electric cyan on cool white, amber as the spark, and two full-bleed midnight bands (Japan, Contact) carrying the weight. */
 :root {
-  --bg: #FFFAFB;
-  --surface: #FBEFF3;
-  --ink: #1E1B33;
-  --muted: #625D78;
-  --line: #EFDFE6;
-  --accent: #B4346A;
+  --bg: #F6F8FD;
+  --surface: #E9EEFB;
+  --ink: #0B1330;
+  --muted: #4A5578;
+  --line: #D8E0F2;
+  --accent: #1F48E0;
   --on-accent: #FFFFFF;
-  --band: #1F1A3D;
-  --band-ink: #FBF1F4;
-  --band-muted: #BDB6D6;
-  --band-line: rgba(251, 241, 244, .16);
-  --sakura: #F4A9C0;
-  --mark: rgba(244, 169, 192, .5);
-  --red: #D0313F;
-  --pk: #2E9E6A;
-  --pink: #FF6FA5;
-  --rose: #C93D7E;
-  --violet: #6A3DE8;
-  --peach: #FFB38A;
-  --btn-edge: #4A2A9E;
-  --blob-o: .38;
-  --grad: linear-gradient(115deg, var(--accent) 0%, var(--rose) 45%, var(--violet) 100%);
-  --shadow: 0 1px 2px rgba(30, 27, 51, .06), 0 14px 34px -14px rgba(30, 27, 51, .24);
+  --band: #0A1230;
+  --band-ink: #F2F5FF;
+  --band-muted: #A9B6DA;
+  --band-line: rgba(242, 245, 255, .16);
+  --pop: #FFB000;
+  --on-pop: #0B1330;
+  --mark: rgba(255, 176, 0, .42);
+  --red: #E0402A;
+  --pk: #0E9F6E;
+  --g1: #1C3AD6;
+  --g2: #2563EB;
+  --g3: #0891B2;
+  --cyan: #06B6D4;
+  --violet: #4F46E5;
+  --gold: #FFB000;
+  --btn-edge: #0F237F;
+  --blob-o: .3;
+  --grad: linear-gradient(115deg, var(--g1) 0%, var(--g2) 50%, var(--g3) 100%);
+  --grad-btn: linear-gradient(115deg, var(--g1) 0%, var(--g2) 100%);
+  --shadow: 0 1px 2px rgba(11, 19, 48, .06), 0 14px 34px -14px rgba(11, 19, 48, .26);
 
   --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --f-body: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
@@ -55,18 +59,20 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #121022; --surface: #1C1933; --ink: #F3EEF4; --muted: #ACA6C4; --line: #2C2846;
-    --accent: #F59BBB; --on-accent: #22101A; --band: #1A1638; --band-ink: #F6EEF2; --band-muted: #B3ACD0;
-    --band-line: rgba(246, 238, 242, .14); --sakura: #F7B3C8; --mark: rgba(247, 179, 200, .24);
-    --red: #EC5B67; --pk: #45C487; --pink: #FF8DBA; --rose: #F27FB0; --violet: #A68BFF; --peach: #FFB993; --btn-edge: #5A3FC4; --blob-o: .26; --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 14px 34px -14px rgba(0, 0, 0, .6);
+    --bg: #070B1A; --surface: #0F1631; --ink: #EEF2FF; --muted: #A3AECF; --line: #1E2950;
+    --accent: #7FA6FF; --on-accent: #06102E; --band: #0C1738; --band-ink: #EEF2FF; --band-muted: #9FB0DA;
+    --band-line: rgba(238, 242, 255, .14); --pop: #FFC233; --on-pop: #0B1330; --mark: rgba(255, 194, 51, .28);
+    --red: #FF5A3D; --pk: #2BC48A; --g1: #9DBAFF; --g2: #5B8CFF; --g3: #38D0FF; --cyan: #38D0FF; --violet: #8B83FF; --gold: #FFC233;
+    --btn-edge: #1B2E8F; --blob-o: .28; --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 14px 34px -14px rgba(0, 0, 0, .6);
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #121022; --surface: #1C1933; --ink: #F3EEF4; --muted: #ACA6C4; --line: #2C2846;
-  --accent: #F59BBB; --on-accent: #22101A; --band: #1A1638; --band-ink: #F6EEF2; --band-muted: #B3ACD0;
-  --band-line: rgba(246, 238, 242, .14); --sakura: #F7B3C8; --mark: rgba(247, 179, 200, .24);
-  --red: #EC5B67; --pk: #45C487; --pink: #FF8DBA; --rose: #F27FB0; --violet: #A68BFF; --peach: #FFB993; --btn-edge: #5A3FC4; --blob-o: .26; --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 14px 34px -14px rgba(0, 0, 0, .6);
+  --bg: #070B1A; --surface: #0F1631; --ink: #EEF2FF; --muted: #A3AECF; --line: #1E2950;
+  --accent: #7FA6FF; --on-accent: #06102E; --band: #0C1738; --band-ink: #EEF2FF; --band-muted: #9FB0DA;
+  --band-line: rgba(238, 242, 255, .14); --pop: #FFC233; --on-pop: #0B1330; --mark: rgba(255, 194, 51, .28);
+  --red: #FF5A3D; --pk: #2BC48A; --g1: #9DBAFF; --g2: #5B8CFF; --g3: #38D0FF; --cyan: #38D0FF; --violet: #8B83FF; --gold: #FFC233;
+  --btn-edge: #1B2E8F; --blob-o: .28; --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 14px 34px -14px rgba(0, 0, 0, .6);
   color-scheme: dark;
 }
 
@@ -90,7 +96,7 @@ a { color: inherit; }
 h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; }
 p { margin: 0; }
 [id] { scroll-margin-top: 84px; }
-:focus-visible { outline: 3px solid var(--sakura); outline-offset: 3px; border-radius: 4px; }
+:focus-visible { outline: 3px solid var(--pop); outline-offset: 3px; border-radius: 4px; }
 
 .wrap {
   max-width: calc(var(--measure) + 2 * var(--gutter));
@@ -160,7 +166,7 @@ p { margin: 0; }
 /* Hero */
 .hero { position: relative; overflow: hidden; padding-block: clamp(40px, 7vw, 96px) clamp(48px, 7vw, 88px); }
 .hero > .wrap { position: relative; z-index: 1; }
-.petals { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+.net { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, .9fr); gap: clamp(32px, 6vw, 80px); align-items: center; }
 .hero-copy { display: grid; gap: 22px; min-width: 0; }
 .hero-name { font-size: clamp(3.1rem, 7.4vw, 6.2rem); line-height: .95; letter-spacing: -.035em; font-weight: 800; }
@@ -188,7 +194,7 @@ mark {
 .portrait-frame img { width: 100%; height: 100%; object-fit: cover; }
 .portrait::before {
   content: ""; position: absolute; inset: 30px 0 0 30px; border-radius: 22px;
-  background: var(--sakura); opacity: .55; z-index: -1;
+  background: var(--pop); opacity: .55; z-index: -1;
 }
 .badge {
   position: absolute; display: flex; align-items: center; gap: 8px;
@@ -230,9 +236,9 @@ mark {
 
 /* Japan band */
 .band { background: var(--band); color: var(--band-ink); }
-.band .eyebrow { color: var(--sakura); }
+.band .eyebrow { color: var(--pop); }
 .band .intro, .band .muted { color: var(--band-muted); }
-.band .link { color: var(--band-ink); border-bottom-color: var(--sakura); }
+.band .link { color: var(--band-ink); border-bottom-color: var(--pop); }
 .jp-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(36px, 6vw, 80px); align-items: start; }
 .jp-copy { display: grid; gap: 20px; min-width: 0; }
 .jp-copy p { max-width: 60ch; }
@@ -251,7 +257,7 @@ mark {
 }
 .facts { display: grid; gap: 10px; padding: 0; margin: 0; list-style: none; }
 .facts li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 10px; }
-.facts li::before { content: ""; width: 10px; height: 10px; margin-top: .55em; border-radius: 50%; background: var(--sakura); }
+.facts li::before { content: ""; width: 10px; height: 10px; margin-top: .55em; border-radius: 50%; background: var(--pop); }
 .jp-photos { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 12px; }
 .jp-photos .zoom { border-radius: 12px; }
 .jp-photos .ph-a { grid-row: span 2; aspect-ratio: 3 / 4.1; }
@@ -260,10 +266,14 @@ mark {
 @media (max-width: 900px) { .jp-grid { grid-template-columns: minmax(0, 1fr); } }
 .jp-moments { margin-top: clamp(44px, 6vw, 76px); }
 .jp-moments-h { font-size: 1.4rem; font-weight: 700; margin-bottom: 16px; }
-.jp-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
-.jp-row .zoom { aspect-ratio: 3 / 4; border-radius: 12px; }
-.jp-row .shrine img { object-position: 42% 50%; }
-@media (max-width: 760px) { .jp-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.jp-photos .ph-b img { object-position: 50% 18%; }
+.jp-moments .jp-team { aspect-ratio: 16 / 8; border-radius: 16px; margin-bottom: clamp(36px, 5vw, 56px); }
+.jp-team img { object-position: 50% 62%; }
+.zoom .cap-lg { font: 600 clamp(.92rem, 1.6vw, 1.15rem)/1.35 var(--f-display); padding: 64px 20px 18px; }
+@media (max-width: 640px) { .jp-moments .jp-team { aspect-ratio: 4 / 3; } }
+.jp-masonry { columns: 3 220px; column-gap: 12px; }
+.jp-masonry .zoom { margin-bottom: 12px; break-inside: avoid; border-radius: 12px; }
+.jp-masonry .zoom img { height: auto; }
 
 /* Zoomable images */
 .zoom {
@@ -376,7 +386,7 @@ mark {
 /* Quote */
 .quote { text-align: left; max-width: 980px; }
 .quote blockquote { margin: 0; font: 650 clamp(1.8rem, 3.8vw, 3rem)/1.15 var(--f-display); letter-spacing: -.02em; text-wrap: balance; }
-.quote blockquote::before { content: "\201C"; display: block; color: var(--sakura); font-size: 2.2em; line-height: .6; margin-bottom: 8px; }
+.quote blockquote::before { content: "\201C"; display: block; color: var(--pop); font-size: 2.2em; line-height: .6; margin-bottom: 8px; }
 .quote cite { display: block; margin-top: 20px; font: 500 .9rem/1.4 var(--f-mono); color: var(--muted); font-style: normal; }
 
 /* Contact */
@@ -387,14 +397,14 @@ mark {
 .contact-list > *:last-child { border-bottom: 1px solid var(--band-line); }
 .contact-list .k { font: 600 .74rem/1.4 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--band-muted); }
 .contact-list a { color: var(--band-ink); font-weight: 600; text-decoration: none; overflow-wrap: anywhere; }
-.contact-list a:hover { text-decoration: underline; text-decoration-color: var(--sakura); }
+.contact-list a:hover { text-decoration: underline; text-decoration-color: var(--pop); }
 .email-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 .copy-btn {
   font: 600 .78rem/1 var(--f-mono); letter-spacing: .06em; text-transform: uppercase;
   background: transparent; color: var(--band-ink); border: 1px solid var(--band-line); border-radius: 999px; padding: 7px 11px; cursor: pointer;
 }
-.copy-btn:hover { border-color: var(--sakura); }
-.contact .cta-row .btn { background: var(--band-ink); color: var(--band); border-color: var(--band-ink); }
+.copy-btn:hover { border-color: var(--pop); }
+.contact .cta-row .btn { background: var(--pop); color: var(--on-pop); border-color: var(--pop); }
 .contact .cta-row .btn.ghost { background: transparent; color: var(--band-ink); border-color: var(--band-line); }
 @media (max-width: 860px) { .contact-grid { grid-template-columns: minmax(0, 1fr); } }
 
@@ -404,9 +414,9 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 /* 3D depth: drifting aurora light, gradient type, raised buttons, tilting cards and photos */
 .aurora { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
 .aurora span { position: absolute; aspect-ratio: 1; border-radius: 50%; filter: blur(70px); opacity: var(--blob-o); }
-.aurora .b1 { width: min(52vw, 640px); left: -10%; top: -22%; background: var(--pink); }
+.aurora .b1 { width: min(52vw, 640px); left: -10%; top: -22%; background: var(--cyan); }
 .aurora .b2 { width: min(44vw, 560px); right: -8%; top: 8%; background: var(--violet); opacity: calc(var(--blob-o) * .7); }
-.aurora .b3 { width: min(38vw, 480px); left: 28%; bottom: -30%; background: var(--peach); }
+.aurora .b3 { width: min(38vw, 480px); left: 28%; bottom: -30%; background: var(--gold); }
 @media (prefers-reduced-motion: no-preference) {
   .aurora .b1 { animation: drift1 16s ease-in-out infinite alternate; }
   .aurora .b2 { animation: drift2 19s ease-in-out infinite alternate; }
@@ -430,10 +440,10 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
   box-shadow: 0 6px 16px -10px color-mix(in srgb, var(--violet) 45%, transparent);
 }
-.titles .t-sakura { background: var(--grad); border-color: transparent; }
+.titles .t-sakura { background: var(--pop); color: var(--on-pop); border-color: transparent; }
 .badge { background: color-mix(in srgb, var(--bg) 76%, transparent); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
 .btn:not(.ghost) {
-  background: var(--grad); border-color: transparent; color: var(--on-accent);
+  background: var(--grad-btn); border-color: transparent; color: var(--on-accent);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35), 0 4px 0 var(--btn-edge), 0 14px 26px -10px color-mix(in srgb, var(--accent) 70%, transparent);
 }
 .btn:not(.ghost):hover {
@@ -452,7 +462,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 }
 .band {
   background:
-    radial-gradient(55% 60% at 8% 0%, color-mix(in srgb, var(--pink) 20%, transparent), transparent 70%),
+    radial-gradient(55% 60% at 8% 0%, color-mix(in srgb, var(--cyan) 20%, transparent), transparent 70%),
     radial-gradient(50% 60% at 100% 100%, color-mix(in srgb, var(--violet) 34%, transparent), transparent 70%),
     var(--band);
 }
@@ -523,7 +533,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 <!-- Hero -->
 <section class="hero">
   <div class="aurora" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span></div>
-  <canvas class="petals" id="petals" aria-hidden="true"></canvas>
+  <canvas class="net" id="net" aria-hidden="true"></canvas>
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <h1 class="hero-name rise">Muskaan Irfan</h1>
@@ -589,11 +599,12 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     <div class="jp-copy">
       <p class="eyebrow"><span class="jp-kanji" lang="ja">福井</span> Fukui, Japan · 2026</p>
       <h2 class="h2" id="japan-h">Invited to Japan as a Sakura Science researcher</h2>
-      <p>The Government of Japan invited Muskaan to the University of Fukui under the JST Sakura Science Program. There she worked on AI-driven tourism research with the Distributed Human Data Engine (DHDE).</p>
+      <p>The Government of Japan invited Muskaan to the University of Fukui under the JST Sakura Science Program, hosted by Dr. Amil Khanzada. There she worked on AI-driven tourism research with the Distributed Human Data Engine (DHDE).</p>
       <ul class="facts">
         <li><span>Combined AI-camera visitor counts, Japan Meteorological Agency weather data, route-search signals and tourism surveys.</span></li>
         <li><span>Studied international visitor demand in Fukui and how weather keeps tourists away.</span></li>
         <li><span>Used forecasting, statistical modelling and spatial analysis to find openings for regional tourism.</span></li>
+        <li><span>Earned the JST Sakura Science Certificate of Achievement and a Certificate of Appreciation from the University of Fukui.</span></li>
       </ul>
       <p>She also gave a talk, <em>Tourism AI: Learn with the World</em>, on Fukui's tourism through Pakistani eyes and what goes on behind a real AI project. Japan's Tannan FM Magazine featured her contribution to the research.</p>
       <div class="venn" role="img" aria-label="Two circles, Japan and Pakistan, overlapping at Learn with the World">
@@ -609,14 +620,14 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       </p>
     </div>
     <div class="jp-photos">
-      <button class="zoom ph-a" type="button" data-group="japan" data-src="assets/img/fukui-keynote.jpg" data-cap="Presenting Tourism AI: Learn with the World at the University of Fukui, 2026">
-        <img src="assets/img/fukui-keynote.jpg" width="1200" height="1600" alt="Muskaan speaking with a microphone in front of her title slide, Tourism AI: Learn with the World">
+      <button class="zoom ph-a" type="button" data-group="japan" data-src="assets/img/fukui-talk-point.jpg" data-cap="Presenting Tourism AI: Learn with the World at the University of Fukui, 2026">
+        <img src="assets/img/fukui-talk-point.jpg" width="792" height="1400" alt="Muskaan with a microphone beside her title slide, Tourism AI: Learn with the World">
       </button>
-      <button class="zoom ph-b" type="button" data-group="japan" data-src="assets/img/fukui-audience.jpg" data-cap="Walking the audience through the visit and the AI project">
+      <button class="zoom ph-b" type="button" data-group="japan" data-src="assets/img/fukui-podium-gesture.jpg" data-cap="Speaking at the podium, University of Fukui">
+        <img src="assets/img/fukui-podium-gesture.jpg" width="788" height="1400" alt="Muskaan speaking at a wooden podium, gesturing with one hand" loading="lazy">
+      </button>
+      <button class="zoom ph-c" type="button" data-group="japan" data-src="assets/img/fukui-audience.jpg" data-cap="Walking the audience through the visit and the AI project">
         <img src="assets/img/fukui-audience.jpg" width="1400" height="1050" alt="Muskaan at the podium with a slide reading Our visit and Our AI project, audience in front" loading="lazy">
-      </button>
-      <button class="zoom ph-c" type="button" data-group="japan" data-src="assets/img/fukui-six-places.jpg" data-cap="Six places that stayed with us: highlights from Fukui">
-        <img src="assets/img/fukui-six-places.jpg" width="1400" height="1050" alt="A slide titled Six places that stayed with us, with Muskaan at the podium" loading="lazy">
       </button>
       <button class="zoom ph-d" type="button" data-group="japan" data-src="assets/img/magazine.jpg" data-cap="Featured in Japan's Tannan FM Magazine">
         <img src="assets/img/magazine.jpg" width="1600" height="963" alt="Open pages of Tannan FM Magazine featuring Muskaan" loading="lazy">
@@ -625,21 +636,45 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     </div>
   </div>
   <div class="wrap jp-moments">
+    <button class="zoom jp-team" type="button" data-group="japan" data-src="assets/img/fukui-team-dhde.jpg" data-cap="With the DHDE research team and fellow Sakura Science researchers, in front of the live Fukui tourism dashboard">
+      <img src="assets/img/fukui-team-dhde.jpg" width="1600" height="1200" alt="Group photo of researchers and Sakura Science participants in front of a large screen showing the Fukui tourism dashboard" loading="lazy">
+      <span class="cap cap-lg">The team behind the Fukui tourism dashboard, with fellow Sakura Science researchers</span>
+    </button>
     <h3 class="jp-moments-h">Moments from Japan</h3>
-    <div class="jp-row">
+    <div class="jp-masonry">
+      <button class="zoom" type="button" data-group="japan" data-src="assets/img/sakura-certificates.jpg" data-cap="Holding the JST Sakura Science Certificate of Achievement and a Certificate of Appreciation from the University of Fukui">
+        <img src="assets/img/sakura-certificates.jpg" width="900" height="1600" alt="Muskaan smiling and holding up two certificates" loading="lazy">
+        <span class="cap">Certificate of Achievement and Certificate of Appreciation</span>
+      </button>
       <button class="zoom" type="button" data-group="japan" data-src="assets/img/fukui-certificate.jpg" data-cap="Receiving a certificate of appreciation from the University of Fukui">
         <img src="assets/img/fukui-certificate.jpg" width="1170" height="1299" alt="Muskaan holding a certificate of appreciation, standing between two colleagues in front of a painting of Mount Fuji" loading="lazy">
-        <span class="cap">Certificate of appreciation, University of Fukui</span>
+        <span class="cap">Certificate ceremony, University of Fukui</span>
+      </button>
+      <button class="zoom" type="button" data-group="japan" data-src="assets/img/uae-fukui-team.jpg" data-cap="With the UAE team after their talk, UAE × Fukui">
+        <img src="assets/img/uae-fukui-team.jpg" width="1600" height="900" alt="Muskaan with four fellow participants beside a slide reading UAE × Fukui" loading="lazy">
+        <span class="cap">Supporting the UAE × Fukui talk</span>
+      </button>
+      <button class="zoom" type="button" data-group="japan" data-src="assets/img/fukui-discussion.jpg" data-cap="Talking through the magazine feature in Fukui">
+        <img src="assets/img/fukui-discussion.jpg" width="1132" height="1200" alt="Muskaan at a table with students and an elderly host, magazine pages spread out" loading="lazy">
+        <span class="cap">Talking through the magazine feature</span>
       </button>
       <button class="zoom" type="button" data-group="japan" data-src="assets/img/fukui-magazine-host.jpg" data-cap="Holding her Tannan FM Magazine feature in Fukui">
         <img src="assets/img/fukui-magazine-host.jpg" width="1050" height="1400" alt="Muskaan and a host holding open the Tannan FM Magazine feature" loading="lazy">
         <span class="cap">With her magazine feature</span>
       </button>
+      <button class="zoom" type="button" data-group="japan" data-src="assets/img/fukui-host.jpg" data-cap="Meeting local hosts in Fukui">
+        <img src="assets/img/fukui-host.jpg" width="1050" height="1400" alt="Muskaan standing with an elderly host in a meeting room" loading="lazy">
+        <span class="cap">Meeting local hosts</span>
+      </button>
+      <button class="zoom" type="button" data-group="japan" data-src="assets/img/uae-fukui-duo.jpg" data-cap="With a fellow Sakura Science researcher at the UAE × Fukui talk">
+        <img src="assets/img/uae-fukui-duo.jpg" width="787" height="1400" alt="Muskaan with a fellow researcher beside the UAE × Fukui title slide" loading="lazy">
+        <span class="cap">With a fellow researcher</span>
+      </button>
       <button class="zoom" type="button" data-group="japan" data-src="assets/img/japan-temple.jpg" data-cap="Exploring Japan's temples">
         <img src="assets/img/japan-temple.jpg" width="960" height="1280" alt="Muskaan standing by a bright orange temple gate" loading="lazy">
         <span class="cap">Exploring Japan's temples</span>
       </button>
-      <button class="zoom shrine" type="button" data-group="japan" data-src="assets/img/japan-shrine.jpg" data-cap="In front of ema prayer boards at a Japanese shrine">
+      <button class="zoom" type="button" data-group="japan" data-src="assets/img/japan-shrine.jpg" data-cap="In front of ema prayer boards at a Japanese shrine">
         <img src="assets/img/japan-shrine.jpg" width="1600" height="900" alt="Muskaan in front of rows of wooden ema prayer boards with red strings" loading="lazy">
         <span class="cap">Ema prayer boards at a shrine</span>
       </button>
@@ -817,6 +852,11 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       </div>
       <div class="award">
         <p class="yr">2026</p>
+        <div><h3>Certificate of Achievement · JST Sakura Science Program</h3><p>Completed the program at the University of Fukui, and received the university's Certificate of Appreciation.</p></div>
+        <p class="proof"><a class="link arrow" href="https://drive.google.com/file/d/1-1uTiWRJ6uwO7HJpWGIfW1oe6TUt9ZmE/view" target="_blank" rel="noopener">Proof </a></p>
+      </div>
+      <div class="award">
+        <p class="yr">2026</p>
         <div><h3>Grants Excellence and Operations Award · Virufy, USA</h3><p>For her contributions as an ML/AI researcher.</p></div>
         <p class="proof"><a class="link arrow" href="https://www.linkedin.com/in/muskaan03/details/honors/" target="_blank" rel="noopener">Proof </a></p>
       </div>
@@ -895,6 +935,12 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       <p class="intro">On stage in Japan, leading at school, and the moments in between. Tap any photo to see it larger.</p>
     </div>
     <div class="gallery">
+      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/fukui-keynote.jpg" data-cap="Presenting at the University of Fukui, 2026">
+        <img src="assets/img/fukui-keynote.jpg" width="1200" height="1600" alt="Muskaan speaking with a microphone in front of her title slide" loading="lazy"><span class="cap">Presenting in Fukui</span>
+      </button>
+      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/fukui-six-places.jpg" data-cap="Six places that stayed with us: highlights from Fukui">
+        <img src="assets/img/fukui-six-places.jpg" width="1400" height="1050" alt="A slide titled Six places that stayed with us, with Muskaan at the podium" loading="lazy"><span class="cap">Six places that stayed with us</span>
+      </button>
       <button class="zoom" type="button" data-group="gallery" data-src="assets/img/fukui-talk.jpg" data-cap="Sharing Fukui's tourism through Pakistani eyes, University of Fukui">
         <img src="assets/img/fukui-talk.jpg" width="1050" height="1400" alt="Muskaan presenting in front of her title slide" loading="lazy"><span class="cap">Sharing Fukui through Pakistani eyes</span>
       </button>
@@ -1122,7 +1168,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   var fine = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (fine && !calm) {
-    var targets = document.querySelectorAll('.portrait-frame, .research-grid .card, .jp-photos .zoom, .jp-row .zoom, .gallery .zoom, .certs .zoom, .art-item .zoom, .lead-photo, .life-photo');
+    var targets = document.querySelectorAll('.portrait-frame, .research-grid .card, .jp-photos .zoom, .jp-team, .jp-masonry .zoom, .gallery .zoom, .certs .zoom, .art-item .zoom, .lead-photo, .life-photo');
     Array.prototype.forEach.call(targets, function (el) {
       var max = el.classList.contains('portrait-frame') ? 7 : 9;
       el.classList.add('tilt');
@@ -1143,50 +1189,62 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     });
   }
 
-  // Falling sakura petals behind the hero
-  var canvas = document.getElementById('petals');
+  // Drifting data network behind the hero
+  var canvas = document.getElementById('net');
   if (!canvas || !canvas.getContext) return;
   var ctx = canvas.getContext('2d');
-  var petals = [], w = 0, h = 0, color = '#F4A9C0', raf = 0;
+  var nodes = [], w = 0, h = 0, color = '#2563EB', spark = '#FFB000', raf = 0, LINK = 130;
   var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function size() {
     var dpr = Math.min(window.devicePixelRatio || 1, 2);
     w = canvas.clientWidth; h = canvas.clientHeight;
     canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    color = getComputedStyle(document.documentElement).getPropertyValue('--sakura').trim() || color;
+    var cs = getComputedStyle(document.documentElement);
+    color = cs.getPropertyValue('--g2').trim() || color;
+    spark = cs.getPropertyValue('--pop').trim() || spark;
   }
-  function make(anywhere) {
+  function make() {
     return {
-      x: Math.random() * w, y: anywhere ? Math.random() * h : -20,
-      s: 5 + Math.random() * 7, vy: .3 + Math.random() * .55, vx: -.15 + Math.random() * .45,
-      a: Math.random() * 6.28, va: -.02 + Math.random() * .04, sway: Math.random() * 6.28, o: .4 + Math.random() * .4
+      x: Math.random() * w, y: Math.random() * h,
+      vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35,
+      r: 1.4 + Math.random() * 1.8, hot: Math.random() < .12
     };
   }
-  function draw(p) {
-    var s = p.s;
-    ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a);
-    ctx.globalAlpha = p.o; ctx.fillStyle = color;
-    ctx.beginPath(); ctx.moveTo(0, s);
-    ctx.bezierCurveTo(-s * 1.1, s * .2, -s * .7, -s, -s * .18, -s * .95);
-    ctx.lineTo(0, -s * .68);
-    ctx.lineTo(s * .18, -s * .95);
-    ctx.bezierCurveTo(s * .7, -s, s * 1.1, s * .2, 0, s);
-    ctx.fill(); ctx.restore();
+  function paint() {
+    ctx.clearRect(0, 0, w, h);
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = color;
+    for (var i = 0; i < nodes.length; i++) {
+      for (var j = i + 1; j < nodes.length; j++) {
+        var dx = nodes[i].x - nodes[j].x, dy = nodes[i].y - nodes[j].y, d = Math.sqrt(dx * dx + dy * dy);
+        if (d < LINK) {
+          ctx.globalAlpha = (1 - d / LINK) * .24;
+          ctx.beginPath(); ctx.moveTo(nodes[i].x, nodes[i].y); ctx.lineTo(nodes[j].x, nodes[j].y); ctx.stroke();
+        }
+      }
+    }
+    for (var k = 0; k < nodes.length; k++) {
+      var n = nodes[k];
+      ctx.globalAlpha = n.hot ? .95 : .5;
+      ctx.fillStyle = n.hot ? spark : color;
+      ctx.beginPath(); ctx.arc(n.x, n.y, n.hot ? n.r + 1 : n.r, 0, 6.2832); ctx.fill();
+    }
+    ctx.globalAlpha = 1;
   }
-  function paint() { ctx.clearRect(0, 0, w, h); petals.forEach(draw); }
   function frame() {
-    for (var i = 0; i < petals.length; i++) {
-      var p = petals[i];
-      p.sway += .015; p.y += p.vy; p.x += p.vx + Math.sin(p.sway) * .4; p.a += p.va;
-      if (p.y > h + 20 || p.x < -30 || p.x > w + 30) petals[i] = make(false);
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      n.x += n.vx; n.y += n.vy;
+      if (n.x < 0 || n.x > w) n.vx *= -1;
+      if (n.y < 0 || n.y > h) n.vy *= -1;
     }
     paint();
     raf = requestAnimationFrame(frame);
   }
   size();
-  var count = Math.round(Math.min(26, Math.max(10, w / 50)));
-  for (var i = 0; i < count; i++) petals.push(make(true));
+  var count = Math.round(Math.min(70, Math.max(24, w * h / 16000)));
+  for (var i = 0; i < count; i++) nodes.push(make());
   paint();
   if (!still) raf = requestAnimationFrame(frame);
   document.addEventListener('visibilitychange', function () {
