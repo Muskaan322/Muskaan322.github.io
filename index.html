@@ -6,14 +6,14 @@
 <title>Muskaan Irfan</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <!-- site-head -->
-<meta name="description" content="Muskaan Irfan: data scientist, mathematician and JST Sakura Science researcher. Research, leadership, awards and contact.">
+<meta name="description" content="Muskaan Irfan: data scientist, mathematician and JST Sakura Science researcher, looking for MS/PhD positions. Research, leadership, awards and contact.">
 <meta property="og:title" content="Muskaan Irfan">
 <meta property="og:description" content="Data scientist, mathematician and researcher. Three-time Harvard CS50x Puzzle Day winner, Stanford Code in Place section leader, national badminton player.">
 <meta property="og:image" content="assets/img/fukui-keynote.jpg">
 <!-- /site-head -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;600&family=Caveat:wght@600&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&text=%E7%A6%8F%E4%BA%95%E6%97%A5%E6%9C%AC%E6%A1%9C&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@600&text=%D9%BE%D8%A7%DA%A9%D8%B3%D8%AA%D8%A7%D9%86&display=swap">
 <style>
@@ -49,12 +49,15 @@
   --grad: linear-gradient(115deg, var(--g1) 0%, var(--g2) 50%, var(--g3) 100%);
   --grad-btn: linear-gradient(115deg, var(--b1) 0%, var(--b2) 100%);
   --shadow: 0 1px 2px rgba(0, 0, 0, .35), 0 16px 36px -14px rgba(0, 0, 0, .7);
+  --paper: #F7F6F2;
+  --paper-ink: #23222B;
 
   --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --f-body: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
   --f-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
   --f-jp: "Noto Sans JP", "Yu Gothic", "Hiragino Sans", sans-serif;
   --f-ur: "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", serif;
+  --f-hand: "Caveat", "Segoe Print", "Bradley Hand", cursive;
 
   --measure: 1160px;
   --gutter: clamp(16px, 4vw, 40px);
@@ -118,6 +121,18 @@ p { margin: 0; }
 }
 .link:hover { border-bottom-color: var(--accent); }
 .links { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 10px; font-size: .95rem; }
+
+/* MS/PhD notice bar */
+.notice { background: var(--pop); color: var(--on-pop); }
+.notice-row { display: flex; align-items: center; gap: 8px 14px; flex-wrap: wrap; padding-block: 9px; font-size: .93rem; line-height: 1.35; }
+.notice-row p { margin-right: auto; }
+.notice-dot { flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--on-pop); }
+.notice-links { display: flex; gap: 16px; }
+.notice-links a { color: var(--on-pop); font-weight: 700; text-underline-offset: 3px; }
+@media (prefers-reduced-motion: no-preference) {
+  .notice-dot { animation: pulse 1.8s ease-out infinite; }
+  @keyframes pulse { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--on-pop) 45%, transparent); } 100% { box-shadow: 0 0 0 9px transparent; } }
+}
 
 /* Header */
 .site-header {
@@ -277,9 +292,6 @@ mark {
 .lead-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(36px, 6vw, 88px); align-items: start; }
 .lead-side { display: grid; gap: 22px; min-width: 0; }
 @media (min-width: 901px) and (min-height: 860px) { .lead-side { position: sticky; top: 96px; } }
-.lead-photo { max-width: 240px; border-radius: var(--radius); }
-.lead-photo img { height: auto; }
-.lead-photo-cap { color: var(--muted); font-size: .9rem; margin-top: -10px; }
 .roles { display: grid; }
 .role { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 18px; padding-block: 26px; border-top: 1px solid var(--line); }
 .role:last-child { border-bottom: 1px solid var(--line); }
@@ -325,12 +337,19 @@ mark {
   .award { grid-template-columns: minmax(0, 1fr); gap: 2px; }
   .award .proof { margin-top: 6px; }
 }
-.certs-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-top: clamp(44px, 5vw, 64px); margin-bottom: 16px; }
-.certs-head h3 { font-size: 1.5rem; }
-.certs-head span { color: var(--muted); font-size: .9rem; }
-.certs { display: flex; gap: 14px; overflow-x: auto; padding-bottom: 12px; scroll-snap-type: x proximity; }
-.certs .zoom { flex: none; width: clamp(200px, 26vw, 270px); aspect-ratio: 4 / 3; scroll-snap-align: start; border: 1px solid var(--line); background: #fff; }
-.certs .zoom img { object-fit: contain; padding: 8px; }
+.awards-more { margin-top: 20px; }
+
+/* Certificates */
+.cert-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(14px, 2vw, 22px); }
+.cert-card { margin: 0; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.cert-card.feature { grid-column: span 2; }
+.cert-card .zoom { aspect-ratio: 4 / 3; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; }
+.cert-card.feature .zoom { aspect-ratio: 16 / 10; }
+.cert-card .zoom img { object-fit: contain; padding: 8px; }
+.cert-card figcaption { display: grid; gap: 2px; }
+.cert-card figcaption b { font: 650 1rem/1.3 var(--f-display); }
+.cert-card figcaption span { font: 500 .78rem/1.4 var(--f-mono); color: var(--muted); }
+@media (max-width: 900px) { .cert-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 /* Gallery */
 .gallery { columns: 3 260px; column-gap: 14px; }
@@ -344,14 +363,36 @@ mark {
 .art-item figcaption { font-size: .9rem; line-height: 1.35; }
 .art-item figcaption span { display: block; color: var(--muted); font: 500 .76rem/1.4 var(--f-mono); }
 
-/* Life */
-.life-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: center; }
-.life-photo { aspect-ratio: 16 / 10; border-radius: var(--radius); }
-.life-copy { display: grid; gap: 18px; min-width: 0; }
-.score { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
-.score b { font: 780 clamp(3rem, 7vw, 4.6rem)/1 var(--f-display); letter-spacing: -.03em; color: var(--accent); font-variant-numeric: tabular-nums; }
-.score span { color: var(--muted); max-width: 26ch; }
-@media (max-width: 800px) { .life-grid { grid-template-columns: minmax(0, 1fr); } }
+/* Story: the candidature's "A Girl with Big Dreams" pages, retold as a scrapbook of instant photos */
+.story { background: var(--surface); }
+.story-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(36px, 6vw, 80px); align-items: center; }
+.story-copy { display: grid; gap: 18px; min-width: 0; }
+.story-quote { font: 650 clamp(1.4rem, 2.6vw, 2rem)/1.2 var(--f-display); color: var(--pop); letter-spacing: -.01em; }
+.story-text { color: var(--muted); max-width: 60ch; }
+.story-text strong { color: var(--ink); font-weight: 650; }
+.story-facts { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.story-facts li { border: 1px solid var(--line); background: var(--bg); border-radius: 999px; padding: 6px 13px; font: 600 .86rem/1.25 var(--f-body); }
+.polaroids { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1fr); gap: 22px; align-items: center; padding: 12px; }
+.polaroids .tall { grid-row: span 2; }
+.polaroid {
+  margin: 0; position: relative; background: var(--paper); padding: 10px 10px 42px; border-radius: 3px;
+  box-shadow: 0 22px 44px -18px rgba(0, 0, 0, .85), 0 2px 6px rgba(0, 0, 0, .3);
+  transform: rotate(var(--r, 0deg)); transition: transform .35s cubic-bezier(.2, .7, .2, 1);
+}
+.polaroid:hover { transform: rotate(0deg) scale(1.03); z-index: 2; }
+.polaroid .zoom { border-radius: 2px; background: var(--paper); }
+.polaroid .zoom img { height: auto; }
+.polaroid figcaption {
+  position: absolute; left: 10px; right: 10px; bottom: 6px; text-align: center;
+  font: 600 1.3rem/1.2 var(--f-hand); color: var(--paper-ink);
+}
+.polaroid-row { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: center; padding: 12px; margin-top: clamp(40px, 6vw, 72px); }
+.story .quote { margin: clamp(48px, 6vw, 80px) 0 0; }
+@media (max-width: 900px) { .story-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 720px) {
+  .polaroid-row { grid-template-columns: minmax(0, 1fr); }
+  .polaroid-row .polaroid { width: 100%; max-width: 440px; justify-self: center; }
+}
 
 /* Journey */
 .journey { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(36px, 6vw, 80px); }
@@ -413,7 +454,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   .badge-b { animation: float 7s ease-in-out -2s infinite; }
   @keyframes float { 50% { transform: translateY(-6px); } }
 }
-.hero-name, .stat b, .card .big, .score b {
+.hero-name, .stat b, .card .big {
   background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .hero-name {
@@ -496,6 +537,17 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 </head>
 <body id="top">
 
+<div class="notice">
+  <div class="wrap notice-row">
+    <span class="notice-dot" aria-hidden="true"></span>
+    <p><strong>Looking for MS/PhD positions.</strong> Muskaan is ready to join a research group.</p>
+    <span class="notice-links">
+      <a href="files/Muskaan-Irfan-CV.pdf" target="_blank" rel="noopener">View CV</a>
+      <a href="#contact">Get in touch</a>
+    </span>
+  </div>
+</div>
+
 <header class="site-header">
   <div class="wrap header-row">
     <a class="brand" href="#top">Muskaan Irfan<span>.</span></a>
@@ -504,7 +556,9 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       <a href="#leadership">Leadership</a>
       <a href="#research">Research</a>
       <a href="#awards">Awards</a>
+      <a href="#certificates">Certificates</a>
       <a href="#gallery">Gallery</a>
+      <a href="#story">Story</a>
       <a href="#art">Art</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -532,7 +586,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         <li>Merit Scholarship Holder</li>
       </ul>
       <p class="statement rise d1">Solving hard problems with data, and <mark>teaching hundreds of others to do the same.</mark></p>
-      <p class="lede rise d2"><strong>Muskaan Irfan</strong> is a data scientist and mathematician from Pakistan. In 2026 the Government of Japan invited her to the University of Fukui as a JST Sakura Science visiting researcher. She holds an MS in Data Science from Air University, where she graduated as Silver Medalist, and a BS in Mathematics from Quaid-i-Azam University.</p>
+      <p class="lede rise d2"><strong>Muskaan Irfan</strong> is a data scientist and mathematician from Pakistan. In 2026 the Government of Japan invited her to the University of Fukui as a JST Sakura Science visiting researcher. She holds an MS in Data Science from Air University, where she graduated as Silver Medalist, and a BS in Mathematics from Quaid-i-Azam University. <strong>She is now looking for MS/PhD positions.</strong></p>
       <p class="sub rise d2">She has won Harvard's CS50x Puzzle Day three years in a row, led a section of Stanford's Code in Place, judged international hackathons and given more than 200 hours of volunteer teaching to students who could not afford classes. She is also a national badminton player.</p>
       <div class="cta-row rise d3">
         <a class="btn" href="files/Muskaan-Irfan-CV.pdf" target="_blank" rel="noopener">View my CV</a>
@@ -544,7 +598,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       <div class="portrait-frame">
         <img src="assets/img/portrait.jpg" width="900" height="1200" alt="Portrait of Muskaan Irfan">
       </div>
-      <span class="badge badge-a"><span class="dot" aria-hidden="true"></span>Open to MS/PhD research positions</span>
+      <span class="badge badge-a"><span class="dot" aria-hidden="true"></span>Looking for MS/PhD positions</span>
       <span class="badge badge-b"><span class="jp" lang="ja">福井</span>JST Sakura Science researcher, 2026</span>
     </figure>
   </div>
@@ -674,10 +728,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       <p class="eyebrow">Leadership &amp; service</p>
       <h2 class="h2" id="lead-h">Leading teams, classrooms and communities</h2>
       <p class="intro">From Head Girl at school to judging international hackathons, Muskaan steps up to lead. She teaches, mentors and organizes across countries and time zones.</p>
-      <button class="zoom lead-photo" type="button" data-group="lead" data-src="assets/img/head-girl.jpg" data-cap="Head Girl at school">
-        <img src="assets/img/head-girl.jpg" width="542" height="1400" alt="Muskaan wearing her Head Girl sash at school" loading="lazy">
-      </button>
-      <p class="lead-photo-cap">Head Girl and prefect at school. Leading started early.</p>
+      <p class="links"><a class="link" href="#story">Read her story, from Head Girl onward ↓</a></p>
     </div>
     <div class="roles">
       <article class="role">
@@ -895,18 +946,75 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       </div>
     </div>
 
-    <div class="certs-head">
-      <h3>Certificates</h3>
-      <span>Tap a certificate to enlarge it</span>
+    <p class="links awards-more"><a class="link" href="#certificates">See all her certificates ↓</a></p>
+  </div>
+</section>
+
+<!-- Certificates -->
+<section class="section" id="certificates" aria-labelledby="certs-h" style="padding-top: 0;">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Certificates</p>
+      <h2 class="h2" id="certs-h">From Harvard to Fukui, on paper</h2>
+      <p class="intro">Tap any certificate to see it full size.</p>
     </div>
-    <div class="certs">
-      <button class="zoom" type="button" data-group="certs" data-src="assets/certs/cs50-2025.jpg" data-cap="Harvard CS50x Puzzle Day 2025: solved all 9 puzzles"><img src="assets/certs/cs50-2025.jpg" width="887" height="676" alt="Harvard CS50x Puzzle Day 2025 certificate" loading="lazy"></button>
-      <button class="zoom" type="button" data-group="certs" data-src="assets/certs/cs50-2024.jpg" data-cap="Harvard CS50x Puzzle Day 2024: solved all 9 puzzles"><img src="assets/certs/cs50-2024.jpg" width="849" height="651" alt="Harvard CS50x Puzzle Day 2024 certificate" loading="lazy"></button>
-      <button class="zoom" type="button" data-group="certs" data-src="assets/certs/genai-mentor.jpg" data-cap="Gen AI Application Instructor/Mentor Certificate, Pakistan Engineering Council with Pak-Angels and iCode Guru, 2025"><img src="assets/certs/genai-mentor.jpg" width="947" height="635" alt="Gen AI Application Instructor and Mentor certificate" loading="lazy"></button>
-      <button class="zoom" type="button" data-group="certs" data-src="assets/certs/cohere-hackathon.jpg" data-cap="Certificate of Completion, Cohere Hackathon, lablab.ai, 2023"><img src="assets/certs/cohere-hackathon.jpg" width="707" height="1000" alt="Cohere Hackathon certificate of completion" loading="lazy"></button>
-      <button class="zoom" type="button" data-group="certs" data-src="assets/certs/openai-hackathon.jpg" data-cap="Certificate of Completion, OpenAI Whisper, GPT-3 and Codex Hackathon, lablab.ai, 2022"><img src="assets/certs/openai-hackathon.jpg" width="707" height="1000" alt="OpenAI hackathon certificate of completion" loading="lazy"></button>
-      <button class="zoom" type="button" data-group="certs" data-src="assets/certs/iymc.jpg" data-cap="International Youth Math Challenge, 2021"><img src="assets/certs/iymc.jpg" width="741" height="519" alt="International Youth Math Challenge certificate" loading="lazy"></button>
-      <button class="zoom" type="button" data-group="certs" data-src="assets/certs/fixit.jpg" data-cap="Fixit Certificate of Appreciation, 2022"><img src="assets/certs/fixit.jpg" width="422" height="304" alt="Fixit certificate of appreciation" loading="lazy"></button>
+    <div class="cert-grid">
+      <figure class="cert-card feature">
+        <button class="zoom" type="button" data-group="certs" data-src="assets/certs/sakura-achievement.jpg" data-cap="Certificate of Achievement, JST Sakura Science Exchange Program, University of Fukui, September 20 to October 10, 2026"><img src="assets/certs/sakura-achievement.jpg" width="691" height="557" alt="JST Sakura Science Certificate of Achievement" loading="lazy"></button>
+        <figcaption><b>Certificate of Achievement</b><span>JST Sakura Science Program · 2026</span></figcaption>
+      </figure>
+      <figure class="cert-card feature">
+        <button class="zoom" type="button" data-group="certs" data-src="assets/certs/fukui-appreciation.jpg" data-cap="Certificate of Appreciation from the University of Fukui, 2026"><img src="assets/certs/fukui-appreciation.jpg" width="674" height="478" alt="University of Fukui Certificate of Appreciation" loading="lazy"></button>
+        <figcaption><b>Certificate of Appreciation</b><span>University of Fukui · 2026</span></figcaption>
+      </figure>
+      <figure class="cert-card">
+        <button class="zoom" type="button" data-group="certs" data-src="assets/certs/cs50-2025.jpg" data-cap="Harvard CS50x Puzzle Day 2025: solved all 9 puzzles"><img src="assets/certs/cs50-2025.jpg" width="887" height="676" alt="Harvard CS50x Puzzle Day 2025 certificate" loading="lazy"></button>
+        <figcaption><b>CS50x Puzzle Day, 9 of 9</b><span>Harvard University · 2025</span></figcaption>
+      </figure>
+      <figure class="cert-card">
+        <button class="zoom" type="button" data-group="certs" data-src="assets/certs/cs50-2024.jpg" data-cap="Harvard CS50x Puzzle Day 2024: solved all 9 puzzles"><img src="assets/certs/cs50-2024.jpg" width="849" height="651" alt="Harvard CS50x Puzzle Day 2024 certificate" loading="lazy"></button>
+        <figcaption><b>CS50x Puzzle Day, 9 of 9</b><span>Harvard University · 2024</span></figcaption>
+      </figure>
+      <figure class="cert-card">
+        <button class="zoom" type="button" data-group="certs" data-src="assets/certs/meta-2025.jpg" data-cap="Meta Hacker Cup 2025: progressed to Round 1"><img src="assets/certs/meta-2025.jpg" width="930" height="659" alt="Meta Hacker Cup 2025 Round 1 certificate" loading="lazy"></button>
+        <figcaption><b>Hacker Cup, Round 1</b><span>Meta · 2025</span></figcaption>
+      </figure>
+      <figure class="cert-card">
+        <button class="zoom" type="button" data-group="certs" data-src="assets/certs/meta-2024.jpg" data-cap="Meta Hacker Cup 2024: progressed to Round 1"><img src="assets/certs/meta-2024.jpg" width="943" height="664" alt="Meta Hacker Cup 2024 Round 1 certificate" loading="lazy"></button>
+        <figcaption><b>Hacker Cup, Round 1</b><span>Meta · 2024</span></figcaption>
+      </figure>
+      <figure class="cert-card">
+        <button class="zoom" type="button" data-group="certs" data-src="assets/certs/genai-mentor.jpg" data-cap="Gen AI Application Instructor/Mentor Certificate, Pakistan Engineering Council with Pak-Angels and iCode Guru, April to May 2025"><img src="assets/certs/genai-mentor.jpg" width="947" height="635" alt="Gen AI Application Instructor and Mentor certificate, 2025" loading="lazy"></button>
+        <figcaption><b>Gen AI Instructor &amp; Mentor</b><span>Pakistan Engineering Council · 2025</span></figcaption>
+      </figure>
+      <figure class="cert-card">
+        <button class="zoom" type="button" data-group="certs" data-src="assets/certs/genai-mentor-2.jpg" data-cap="Gen AI Application Instructor/Mentor Certificate, Pakistan Engineering Council with Pak-Angels and iCode Guru, December 2024 to January 2025"><img src="assets/certs/genai-mentor-2.jpg" width="918" height="633" alt="Gen AI Application Instructor and Mentor certificate, 2024 to 2025" loading="lazy"></button>
+        <figcaption><b>Gen AI Instructor &amp; Mentor</b><span>Pakistan Engineering Council · 2024–25</span></figcaption>
+      </figure>
+      <figure class="cert-card">
+        <button class="zoom" type="button" data-group="certs" data-src="assets/certs/python-mathematicians.jpg" data-cap="Certificate of Appreciation for teaching Python for Mathematicians, COMSATS University Islamabad, Lahore Campus, October 2024"><img src="assets/certs/python-mathematicians.jpg" width="687" height="421" alt="COMSATS certificate of appreciation for teaching Python for Mathematicians" loading="lazy"></button>
+        <figcaption><b>Python for Mathematicians</b><span>COMSATS University · 2024</span></figcaption>
+      </figure>
+      <figure class="cert-card">
+        <button class="zoom" type="button" data-group="certs" data-src="assets/certs/calico-2024.jpg" data-cap="UC Berkeley Calico Coding Competition, Fall 2024: certificate of participation"><img src="assets/certs/calico-2024.jpg" width="763" height="546" alt="UC Berkeley Calico Fall 2024 certificate of participation" loading="lazy"></button>
+        <figcaption><b>Calico Coding Competition</b><span>UC Berkeley · 2024</span></figcaption>
+      </figure>
+      <figure class="cert-card">
+        <button class="zoom" type="button" data-group="certs" data-src="assets/certs/cohere-hackathon.jpg" data-cap="Certificate of Completion, Cohere Hackathon, lablab.ai, 2023"><img src="assets/certs/cohere-hackathon.jpg" width="707" height="1000" alt="Cohere Hackathon certificate of completion" loading="lazy"></button>
+        <figcaption><b>Cohere Hackathon</b><span>lablab.ai · 2023</span></figcaption>
+      </figure>
+      <figure class="cert-card">
+        <button class="zoom" type="button" data-group="certs" data-src="assets/certs/openai-hackathon.jpg" data-cap="Certificate of Completion, OpenAI Whisper, GPT-3 and Codex Hackathon, lablab.ai, 2022"><img src="assets/certs/openai-hackathon.jpg" width="707" height="1000" alt="OpenAI hackathon certificate of completion" loading="lazy"></button>
+        <figcaption><b>OpenAI Hackathon</b><span>lablab.ai · 2022</span></figcaption>
+      </figure>
+      <figure class="cert-card">
+        <button class="zoom" type="button" data-group="certs" data-src="assets/certs/fixit.jpg" data-cap="Fixit Certificate of Appreciation, 2022"><img src="assets/certs/fixit.jpg" width="422" height="304" alt="Fixit certificate of appreciation" loading="lazy"></button>
+        <figcaption><b>Certificate of Appreciation</b><span>Fixit · 2022</span></figcaption>
+      </figure>
+      <figure class="cert-card">
+        <button class="zoom" type="button" data-group="certs" data-src="assets/certs/iymc.jpg" data-cap="International Youth Math Challenge, 2021"><img src="assets/certs/iymc.jpg" width="741" height="519" alt="International Youth Math Challenge certificate" loading="lazy"></button>
+        <figcaption><b>International Youth Math Challenge</b><span>IYMC · 2021</span></figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -917,7 +1025,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     <div class="section-head">
       <p class="eyebrow">Gallery</p>
       <h2 class="h2" id="gallery-h">In action</h2>
-      <p class="intro">On stage in Japan, leading at school, and the moments in between. Tap any photo to see it larger.</p>
+      <p class="intro">On stage in Japan and milestones along the way. Tap any photo to see it larger.</p>
     </div>
     <div class="gallery">
       <button class="zoom" type="button" data-group="gallery" data-src="assets/img/fukui-keynote.jpg" data-cap="Presenting at the University of Fukui, 2026">
@@ -932,36 +1040,63 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       <button class="zoom" type="button" data-group="gallery" data-src="assets/img/graduation.jpg" data-cap="Graduation day, BS Mathematics, Quaid-i-Azam University, Class of 2022">
         <img src="assets/img/graduation.jpg" width="933" height="1400" alt="Muskaan in graduation cap and gown with a Class of 2022 stole" loading="lazy"><span class="cap">Graduation, Class of 2022</span>
       </button>
-      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/school-leaders.jpg" data-cap="With her school during her Head Girl years">
-        <img src="assets/img/school-leaders.jpg" width="1040" height="780" alt="Large group photo of students in school uniform" loading="lazy"><span class="cap">Head Girl years</span>
-      </button>
       <button class="zoom" type="button" data-group="gallery" data-src="assets/img/fukui-team.jpg" data-cap="After the talk in Fukui">
         <img src="assets/img/fukui-team.jpg" width="808" height="1400" alt="Muskaan with two fellow participants after the talk" loading="lazy"><span class="cap">After the talk in Fukui</span>
-      </button>
-      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/recognition.jpg" data-cap="Celebrating with classmates and a teacher at school">
-        <img src="assets/img/recognition.jpg" width="1280" height="720" alt="Muskaan holding a gift with classmates and a teacher" loading="lazy"><span class="cap">School celebrations</span>
-      </button>
-      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/badminton.jpg" data-cap="Badminton, her sport since college">
-        <img src="assets/img/badminton.jpg" width="675" height="1200" alt="Muskaan holding a badminton racket in a garden" loading="lazy"><span class="cap">Badminton since college</span>
       </button>
     </div>
   </div>
 </section>
 
-<!-- Life -->
-<section class="section" aria-labelledby="life-h" style="background: var(--surface);">
-  <div class="wrap life-grid">
-    <button class="zoom life-photo" type="button" data-group="life" data-src="assets/img/badminton-court.jpg" data-cap="National badminton player: 19 wins in 21 state-level matches">
-      <img src="assets/img/badminton-court.jpg" width="1400" height="788" alt="Muskaan holding a badminton racket in the evening" loading="lazy">
-    </button>
-    <div class="life-copy">
-      <p class="eyebrow">Beyond the screen</p>
-      <h2 class="h2" id="life-h">A national badminton player</h2>
-      <div class="score"><b>19–2</b><span>Her record across 21 state-level matches</span></div>
-      <p class="intro">She represented Quaid-i-Azam University at the National Olympics. On the court and in code she brings the same focus, strategy and resilience.</p>
-      <p class="intro">She also writes about technology, data science and algorithms for a wide audience on LinkedIn.</p>
-      <p class="links"><a class="link arrow" href="https://www.linkedin.com/in/muskaan03/recent-activity/articles/" target="_blank" rel="noopener">Read her articles </a></p>
+<!-- Story -->
+<section class="section story" id="story" aria-labelledby="story-h">
+  <div class="wrap">
+    <div class="story-grid">
+      <div class="story-copy">
+        <p class="eyebrow">In my own words</p>
+        <h2 class="h2" id="story-h">A Girl with Big Dreams</h2>
+        <p class="story-quote">“Excellence is not an act, but a habit.”</p>
+        <p class="story-text">My journey is defined by a balance of academic rigour and competitive spirit. As a Merit Scholarship holder since elementary school, I learned early on that consistency is the key. This foundation allowed me to step into leadership roles, serving as <strong>Head Girl/Prefect</strong> and actively hosting large-scale university events and technical presentations.</p>
+        <p class="story-text">But my discipline is truly tested on the court. Since college, I have played badminton at <strong>state-level tournaments</strong>, competing in <strong>21 matches and winning 19</strong>. As a National Badminton Player, I have represented my university at the <strong>National Olympics and state-level tournaments</strong>. Whether organizing a team event or competing for a match point, I bring the same level of focus, strategy, and resilience that I apply to my code.</p>
+        <ul class="story-facts" aria-label="Highlights">
+          <li>Merit scholar since elementary school</li>
+          <li>Head Girl &amp; Prefect</li>
+          <li>19 of 21 matches won</li>
+          <li>National Olympics</li>
+        </ul>
+      </div>
+      <div class="polaroids">
+        <figure class="polaroid tall" style="--r: -3deg;">
+          <button class="zoom" type="button" data-group="story" data-src="assets/img/head-girl.jpg" data-cap="Head Girl at school"><img src="assets/img/head-girl.jpg" width="542" height="1400" alt="Muskaan wearing her Head Girl sash at school" loading="lazy"></button>
+          <figcaption>Head Girl</figcaption>
+        </figure>
+        <figure class="polaroid" style="--r: 2.5deg;">
+          <button class="zoom" type="button" data-group="story" data-src="assets/img/school-desk.jpg" data-cap="School days"><img src="assets/img/school-desk.jpg" width="900" height="1200" alt="Muskaan in school uniform, leaning on a wooden desk" loading="lazy"></button>
+          <figcaption>School days</figcaption>
+        </figure>
+        <figure class="polaroid" style="--r: -1.5deg;">
+          <button class="zoom" type="button" data-group="story" data-src="assets/img/badminton.jpg" data-cap="Badminton, her sport since college"><img src="assets/img/badminton.jpg" width="675" height="1200" alt="Muskaan holding a badminton racket in a garden" loading="lazy"></button>
+          <figcaption>Racket ready</figcaption>
+        </figure>
+      </div>
     </div>
+    <div class="polaroid-row">
+      <figure class="polaroid" style="--r: 1.5deg;">
+        <button class="zoom" type="button" data-group="story" data-src="assets/img/school-leaders.jpg" data-cap="With my school during my Head Girl years"><img src="assets/img/school-leaders.jpg" width="1040" height="780" alt="Large group photo of students in school uniform" loading="lazy"></button>
+        <figcaption>My school</figcaption>
+      </figure>
+      <figure class="polaroid" style="--r: -2deg;">
+        <button class="zoom" type="button" data-group="story" data-src="assets/img/recognition.jpg" data-cap="A proud moment at school"><img src="assets/img/recognition.jpg" width="1280" height="720" alt="Muskaan holding a gift with classmates and a teacher" loading="lazy"></button>
+        <figcaption>A proud moment</figcaption>
+      </figure>
+      <figure class="polaroid" style="--r: 2deg;">
+        <button class="zoom" type="button" data-group="story" data-src="assets/img/badminton-court.jpg" data-cap="National badminton player: 19 wins in 21 state-level matches"><img src="assets/img/badminton-court.jpg" width="1400" height="788" alt="Muskaan holding a badminton racket in the evening" loading="lazy"></button>
+        <figcaption>Game on</figcaption>
+      </figure>
+    </div>
+    <figure class="quote">
+      <blockquote>I aim not just to learn, but to create, challenge, and contribute to the frontiers of knowledge.</blockquote>
+      <cite>Muskaan Irfan</cite>
+    </figure>
   </div>
 </section>
 
@@ -1025,23 +1160,13 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   </div>
 </section>
 
-<!-- Quote -->
-<section class="section" aria-label="Quote" style="padding-top: 0;">
-  <div class="wrap">
-    <figure class="quote" style="margin: 0;">
-      <blockquote>I aim not just to learn, but to create, challenge, and contribute to the frontiers of knowledge.</blockquote>
-      <cite>Muskaan Irfan</cite>
-    </figure>
-  </div>
-</section>
-
 <!-- Contact -->
 <section class="band section contact" id="contact" aria-labelledby="contact-h">
   <div class="wrap contact-grid">
     <div style="display: grid; gap: 22px; min-width: 0;">
       <p class="eyebrow">Contact</p>
-      <h2 class="h2" id="contact-h">Looking for a researcher, a speaker or a hackathon judge?</h2>
-      <p class="intro">Muskaan is open to MS/PhD research positions, talks, mentoring and collaborations.</p>
+      <h2 class="h2" id="contact-h">Looking for a driven MS/PhD researcher for your lab?</h2>
+      <p class="intro">Muskaan is looking for MS/PhD positions. She is also open to talks, mentoring, hackathon judging and research collaborations.</p>
       <div class="cta-row">
         <a class="btn" href="files/Muskaan-Irfan-CV.pdf" target="_blank" rel="noopener">View my CV</a>
         <a class="btn ghost" href="files/Muskaan-Irfan-Candidature.pdf" target="_blank" rel="noopener">Candidature file</a>
@@ -1055,6 +1180,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       <div><span class="k">LinkedIn</span><a class="arrow" href="https://www.linkedin.com/in/muskaan03/" target="_blank" rel="noopener">in/muskaan03 </a></div>
       <div><span class="k">GitHub</span><a class="arrow" href="https://github.com/Muskaan322" target="_blank" rel="noopener">Muskaan322 </a></div>
       <div><span class="k">LeetCode</span><a class="arrow" href="https://leetcode.com/u/Muskaan03/" target="_blank" rel="noopener">Muskaan03 </a></div>
+      <div><span class="k">Articles</span><a class="arrow" href="https://www.linkedin.com/in/muskaan03/recent-activity/articles/" target="_blank" rel="noopener">On LinkedIn </a></div>
     </div>
   </div>
 </section>
@@ -1141,7 +1267,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   var fine = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (fine && !calm) {
-    var targets = document.querySelectorAll('.portrait-frame, .research-grid .card, .jp-photos .zoom, .jp-team, .jp-masonry .zoom, .gallery .zoom, .certs .zoom, .art-item .zoom, .lead-photo, .life-photo');
+    var targets = document.querySelectorAll('.portrait-frame, .research-grid .card, .jp-photos .zoom, .jp-team, .jp-masonry .zoom, .gallery .zoom, .cert-card .zoom, .art-item .zoom');
     Array.prototype.forEach.call(targets, function (el) {
       var max = el.classList.contains('portrait-frame') ? 7 : 9;
       el.classList.add('tilt');
