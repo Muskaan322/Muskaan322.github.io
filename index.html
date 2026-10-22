@@ -17,35 +17,38 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&text=%E7%A6%8F%E4%BA%95%E6%97%A5%E6%9C%AC%E6%A1%9C&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@600&text=%D9%BE%D8%A7%DA%A9%D8%B3%D8%AA%D8%A7%D9%86&display=swap">
 <style>
-/* Layout: an editorial one-column story at a 1160px measure. Bold palette: cobalt and electric cyan on cool white, amber as the spark, and two full-bleed midnight bands (Japan, Contact) carrying the weight. */
+/* Layout: an editorial one-column story at a 1160px measure. One dark theme for every viewer: deep navy-black ground, electric cobalt and cyan, amber as the spark, and two glowing midnight bands (Japan, Contact). */
 :root {
-  --bg: #F6F8FD;
-  --surface: #E9EEFB;
-  --ink: #0B1330;
-  --muted: #4A5578;
-  --line: #D8E0F2;
-  --accent: #1F48E0;
+  color-scheme: dark;
+  --bg: #060A17;
+  --surface: #0E1530;
+  --ink: #EEF2FF;
+  --muted: #A3AECF;
+  --line: #1E2A52;
+  --accent: #7FA6FF;
   --on-accent: #FFFFFF;
-  --band: #0A1230;
-  --band-ink: #F2F5FF;
-  --band-muted: #A9B6DA;
-  --band-line: rgba(242, 245, 255, .16);
-  --pop: #FFB000;
+  --band: #0B1636;
+  --band-ink: #EEF2FF;
+  --band-muted: #A3B3DC;
+  --band-line: rgba(238, 242, 255, .14);
+  --pop: #FFC233;
   --on-pop: #0B1330;
-  --mark: rgba(255, 176, 0, .42);
-  --red: #E0402A;
-  --pk: #0E9F6E;
-  --g1: #1C3AD6;
-  --g2: #2563EB;
-  --g3: #0891B2;
-  --cyan: #06B6D4;
-  --violet: #4F46E5;
-  --gold: #FFB000;
-  --btn-edge: #0F237F;
+  --mark: rgba(255, 194, 51, .32);
+  --red: #FF5A3D;
+  --pk: #2BC48A;
+  --g1: #8FA8FF;
+  --g2: #4D7BFF;
+  --g3: #22D3EE;
+  --b1: #3B6CFF;
+  --b2: #2350F0;
+  --cyan: #22D3EE;
+  --violet: #7C6CFF;
+  --gold: #FFC233;
+  --btn-edge: #142A8C;
   --blob-o: .3;
   --grad: linear-gradient(115deg, var(--g1) 0%, var(--g2) 50%, var(--g3) 100%);
-  --grad-btn: linear-gradient(115deg, var(--g1) 0%, var(--g2) 100%);
-  --shadow: 0 1px 2px rgba(11, 19, 48, .06), 0 14px 34px -14px rgba(11, 19, 48, .26);
+  --grad-btn: linear-gradient(115deg, var(--b1) 0%, var(--b2) 100%);
+  --shadow: 0 1px 2px rgba(0, 0, 0, .35), 0 16px 36px -14px rgba(0, 0, 0, .7);
 
   --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --f-body: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
@@ -56,24 +59,6 @@
   --measure: 1160px;
   --gutter: clamp(16px, 4vw, 40px);
   --radius: 14px;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #070B1A; --surface: #0F1631; --ink: #EEF2FF; --muted: #A3AECF; --line: #1E2950;
-    --accent: #7FA6FF; --on-accent: #06102E; --band: #0C1738; --band-ink: #EEF2FF; --band-muted: #9FB0DA;
-    --band-line: rgba(238, 242, 255, .14); --pop: #FFC233; --on-pop: #0B1330; --mark: rgba(255, 194, 51, .28);
-    --red: #FF5A3D; --pk: #2BC48A; --g1: #9DBAFF; --g2: #5B8CFF; --g3: #38D0FF; --cyan: #38D0FF; --violet: #8B83FF; --gold: #FFC233;
-    --btn-edge: #1B2E8F; --blob-o: .28; --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 14px 34px -14px rgba(0, 0, 0, .6);
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #070B1A; --surface: #0F1631; --ink: #EEF2FF; --muted: #A3AECF; --line: #1E2950;
-  --accent: #7FA6FF; --on-accent: #06102E; --band: #0C1738; --band-ink: #EEF2FF; --band-muted: #9FB0DA;
-  --band-line: rgba(238, 242, 255, .14); --pop: #FFC233; --on-pop: #0B1330; --mark: rgba(255, 194, 51, .28);
-  --red: #FF5A3D; --pk: #2BC48A; --g1: #9DBAFF; --g2: #5B8CFF; --g3: #38D0FF; --cyan: #38D0FF; --violet: #8B83FF; --gold: #FFC233;
-  --btn-edge: #1B2E8F; --blob-o: .28; --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 14px 34px -14px rgba(0, 0, 0, .6);
-  color-scheme: dark;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -941,17 +926,11 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       <button class="zoom" type="button" data-group="gallery" data-src="assets/img/fukui-six-places.jpg" data-cap="Six places that stayed with us: highlights from Fukui">
         <img src="assets/img/fukui-six-places.jpg" width="1400" height="1050" alt="A slide titled Six places that stayed with us, with Muskaan at the podium" loading="lazy"><span class="cap">Six places that stayed with us</span>
       </button>
-      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/fukui-talk.jpg" data-cap="Sharing Fukui's tourism through Pakistani eyes, University of Fukui">
-        <img src="assets/img/fukui-talk.jpg" width="1050" height="1400" alt="Muskaan presenting in front of her title slide" loading="lazy"><span class="cap">Sharing Fukui through Pakistani eyes</span>
-      </button>
       <button class="zoom" type="button" data-group="gallery" data-src="assets/img/fukui-compare.jpg" data-cap="Fukui and Pakistan side by side in her talk">
         <img src="assets/img/fukui-compare.jpg" width="1400" height="1050" alt="Slide comparing Fukui and Pakistan while Muskaan speaks at the podium" loading="lazy"><span class="cap">Fukui and Pakistan, side by side</span>
       </button>
       <button class="zoom" type="button" data-group="gallery" data-src="assets/img/graduation.jpg" data-cap="Graduation day, BS Mathematics, Quaid-i-Azam University, Class of 2022">
         <img src="assets/img/graduation.jpg" width="933" height="1400" alt="Muskaan in graduation cap and gown with a Class of 2022 stole" loading="lazy"><span class="cap">Graduation, Class of 2022</span>
-      </button>
-      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/fukui-title.jpg" data-cap="Opening her talk at the JST Sakura Science Program, University of Fukui">
-        <img src="assets/img/fukui-title.jpg" width="792" height="1400" alt="Muskaan opening her talk beside the title slide" loading="lazy"><span class="cap">Opening the talk in Fukui</span>
       </button>
       <button class="zoom" type="button" data-group="gallery" data-src="assets/img/school-leaders.jpg" data-cap="With her school during her Head Girl years">
         <img src="assets/img/school-leaders.jpg" width="1040" height="780" alt="Large group photo of students in school uniform" loading="lazy"><span class="cap">Head Girl years</span>
@@ -959,14 +938,8 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       <button class="zoom" type="button" data-group="gallery" data-src="assets/img/fukui-team.jpg" data-cap="After the talk in Fukui">
         <img src="assets/img/fukui-team.jpg" width="808" height="1400" alt="Muskaan with two fellow participants after the talk" loading="lazy"><span class="cap">After the talk in Fukui</span>
       </button>
-      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/fukui-podium.jpg" data-cap="At the podium, University of Fukui">
-        <img src="assets/img/fukui-podium.jpg" width="787" height="1400" alt="Muskaan speaking at a wooden podium" loading="lazy"><span class="cap">At the podium</span>
-      </button>
       <button class="zoom" type="button" data-group="gallery" data-src="assets/img/recognition.jpg" data-cap="Celebrating with classmates and a teacher at school">
         <img src="assets/img/recognition.jpg" width="1280" height="720" alt="Muskaan holding a gift with classmates and a teacher" loading="lazy"><span class="cap">School celebrations</span>
-      </button>
-      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/fukui-mic.jpg" data-cap="On stage at the University of Fukui, 2026">
-        <img src="assets/img/fukui-mic.jpg" width="792" height="1400" alt="Muskaan speaking into a microphone on stage" loading="lazy"><span class="cap">On stage in Fukui</span>
       </button>
       <button class="zoom" type="button" data-group="gallery" data-src="assets/img/badminton.jpg" data-cap="Badminton, her sport since college">
         <img src="assets/img/badminton.jpg" width="675" height="1200" alt="Muskaan holding a badminton racket in a garden" loading="lazy"><span class="cap">Badminton since college</span>
