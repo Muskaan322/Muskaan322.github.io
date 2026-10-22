@@ -166,6 +166,14 @@ p { margin: 0; }
 .titles .t-sakura { display: inline-flex; align-items: center; gap: 7px; background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
 .titles .t-sakura span { font-family: var(--f-jp); font-weight: 700; }
 .statement { font: 680 clamp(1.55rem, 2.9vw, 2.35rem)/1.15 var(--f-display); letter-spacing: -.02em; text-wrap: balance; max-width: 24ch; }
+.typer { margin: -6px 0 0; font: 700 clamp(1.15rem, 2.4vw, 1.8rem)/1.25 var(--f-display); letter-spacing: -.01em; color: var(--ink); }
+.typer-word { background: linear-gradient(115deg, var(--g2), var(--g3)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.caret { display: inline-block; width: 3px; height: 1em; margin-left: 4px; vertical-align: -.14em; border-radius: 2px; background: var(--pop); }
+@media (prefers-reduced-motion: no-preference) {
+  .caret { animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+}
+@media (max-width: 520px) { .typer { min-height: 2.5em; } }
 mark {
   color: inherit; background: linear-gradient(transparent 60%, var(--mark) 60%);
   -webkit-box-decoration-break: clone; box-decoration-break: clone; padding: 0 .04em;
@@ -582,6 +590,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <h1 class="hero-name rise">Muskaan Irfan</h1>
+      <p class="typer rise d1" aria-label="Data Scientist, Machine Learning Researcher, Mathematician, Sakura Science Researcher, Top Coder, National Badminton Player, Portrait Artist, Hackathon Judge"><span aria-hidden="true">I'm a <span class="typer-word" id="typer">Data Scientist</span><span class="caret"></span></span></p>
       <ul class="titles rise d1" aria-label="Titles">
         <li class="t-sakura"><span lang="ja">桜</span>Sakura Science Researcher</li>
         <li class="t-key">IEEE MedAI 2026 Committee Member</li>
@@ -594,7 +603,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         <li>Int'l Hackathon Judge</li>
         <li>Merit Scholarship Holder</li>
       </ul>
-      <p class="statement rise d1">From Pakistan to Japan, turning data into impact and <mark>opening doors for hundreds of others.</mark></p>
+      <p class="statement rise d1">If someone can dream it, <mark>I can code it.</mark></p>
       <p class="lede rise d2"><strong>Muskaan Irfan</strong> is a data scientist and mathematician from Pakistan. In 2026 the Government of Japan invited her to the University of Fukui as a JST Sakura Science visiting researcher. She holds an MS in Data Science from Air University, where she graduated as Silver Medalist, and a BS in Mathematics from Quaid-i-Azam University. <strong>She is now looking for MS/PhD positions.</strong></p>
       <p class="sub rise d2"><strong>She serves on the Program Committee of IEEE MedAI 2026 and reviews for WiML @ NeurIPS 2026.</strong> She has won Harvard's CS50x Puzzle Day three years in a row, led a section of Stanford's Code in Place, judged international hackathons and given more than 200 hours of volunteer teaching to students who could not afford classes. <strong>Beyond research, she is a <a class="link" href="#story">national badminton player</a> and a <a class="link" href="#art">portrait and calligraphy artist</a>.</strong></p>
       <div class="cta-row rise d3">
@@ -1386,6 +1395,26 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     if (e.key === 'ArrowLeft') show(idx - 1);
     if (e.key === 'ArrowRight') show(idx + 1);
   });
+
+  // Typing titles under the name
+  var typer = document.getElementById('typer');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (typer && !reduce) {
+    var roles = ['Data Scientist', 'Machine Learning Researcher', 'Mathematician', 'Sakura Science Researcher', 'Top Coder', 'National Badminton Player', 'Portrait Artist', 'Hackathon Judge'];
+    var r = 0, c = roles[0].length, deleting = true;
+    var tick = function () {
+      if (deleting) {
+        c--;
+        if (c <= 0) { deleting = false; r = (r + 1) % roles.length; c = 0; }
+      } else {
+        c++;
+        if (c >= roles[r].length) { typer.textContent = roles[r]; deleting = true; setTimeout(tick, 1700); return; }
+      }
+      typer.textContent = roles[r].slice(0, c);
+      setTimeout(tick, deleting ? 35 : 70);
+    };
+    setTimeout(tick, 1700);
+  }
 
   // 3D tilt with a light shine on cards and photos (mouse only)
   var fine = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
