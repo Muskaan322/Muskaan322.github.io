@@ -17,35 +17,35 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&text=%E7%A6%8F%E4%BA%95%E6%97%A5%E6%9C%AC%E6%A1%9C&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@600&text=%D9%BE%D8%A7%DA%A9%D8%B3%D8%AA%D8%A7%D9%86&display=swap">
 <style>
-/* Layout: an editorial one-column story at a 1160px measure. One dark theme for every viewer: deep navy-black ground, electric cobalt and cyan, amber as the spark, and two glowing midnight bands (Japan, Contact). */
+/* Layout: an editorial one-column story at a 1160px measure. One dark theme for every viewer: a black ground, a dark-blue to purple to pink spectrum for type and glow, pink as the spark, and two deep-blue bands (Japan, Contact). */
 :root {
   color-scheme: dark;
-  --bg: #060A17;
-  --surface: #0E1530;
-  --ink: #EEF2FF;
-  --muted: #A3AECF;
-  --line: #1E2A52;
-  --accent: #7FA6FF;
+  --bg: #050508;
+  --surface: #0D0D1C;
+  --ink: #F4F2FF;
+  --muted: #A9A7C9;
+  --line: #24234A;
+  --accent: #C084FC;
   --on-accent: #FFFFFF;
-  --band: #0B1636;
-  --band-ink: #EEF2FF;
-  --band-muted: #A3B3DC;
-  --band-line: rgba(238, 242, 255, .14);
-  --pop: #FFC233;
-  --on-pop: #0B1330;
-  --mark: rgba(255, 194, 51, .32);
-  --red: #FF5A3D;
+  --band: #0A0F33;
+  --band-ink: #F4F2FF;
+  --band-muted: #B4B5E0;
+  --band-line: rgba(244, 242, 255, .14);
+  --pop: #F472B6;
+  --on-pop: #1A0612;
+  --mark: rgba(244, 114, 182, .34);
+  --red: #FF4D5E;
   --pk: #2BC48A;
-  --g1: #8FA8FF;
-  --g2: #4D7BFF;
-  --g3: #22D3EE;
-  --b1: #3B6CFF;
-  --b2: #2350F0;
-  --cyan: #22D3EE;
-  --violet: #7C6CFF;
-  --gold: #FFC233;
-  --btn-edge: #142A8C;
-  --blob-o: .3;
+  --g1: #3B82F6;
+  --g2: #8B5CF6;
+  --g3: #EC4899;
+  --b1: #2547F4;
+  --b2: #7C3AED;
+  --blue: #2547F4;
+  --violet: #8B5CF6;
+  --pink: #EC4899;
+  --btn-edge: #1C1A78;
+  --blob-o: .32;
   --grad: linear-gradient(115deg, var(--g1) 0%, var(--g2) 50%, var(--g3) 100%);
   --grad-btn: linear-gradient(115deg, var(--b1) 0%, var(--b2) 100%);
   --shadow: 0 1px 2px rgba(0, 0, 0, .35), 0 16px 36px -14px rgba(0, 0, 0, .7);
@@ -465,9 +465,9 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 /* 3D depth: drifting aurora light, gradient type, raised buttons, tilting cards and photos */
 .aurora { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
 .aurora span { position: absolute; aspect-ratio: 1; border-radius: 50%; filter: blur(70px); opacity: var(--blob-o); }
-.aurora .b1 { width: min(52vw, 640px); left: -10%; top: -22%; background: var(--cyan); }
+.aurora .b1 { width: min(52vw, 640px); left: -10%; top: -22%; background: var(--blue); }
 .aurora .b2 { width: min(44vw, 560px); right: -8%; top: 8%; background: var(--violet); opacity: calc(var(--blob-o) * .7); }
-.aurora .b3 { width: min(38vw, 480px); left: 28%; bottom: -30%; background: var(--gold); }
+.aurora .b3 { width: min(38vw, 480px); left: 28%; bottom: -30%; background: var(--pink); }
 @media (prefers-reduced-motion: no-preference) {
   .aurora .b1 { animation: drift1 16s ease-in-out infinite alternate; }
   .aurora .b2 { animation: drift2 19s ease-in-out infinite alternate; }
@@ -513,7 +513,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 }
 .band {
   background:
-    radial-gradient(55% 60% at 8% 0%, color-mix(in srgb, var(--cyan) 20%, transparent), transparent 70%),
+    radial-gradient(55% 60% at 8% 0%, color-mix(in srgb, var(--blue) 20%, transparent), transparent 70%),
     radial-gradient(50% 60% at 100% 100%, color-mix(in srgb, var(--violet) 34%, transparent), transparent 70%),
     var(--band);
 }
@@ -1159,6 +1159,12 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       <button class="zoom" type="button" data-group="gallery" data-src="assets/img/fukui-six-places.jpg" data-cap="Six places that stayed with us: highlights from Fukui">
         <img src="assets/img/fukui-six-places.jpg" width="1400" height="1050" alt="A slide titled Six places that stayed with us, with Muskaan at the podium" loading="lazy"><span class="cap">Six places that stayed with us</span>
       </button>
+      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/japan-calligraphy.jpg" data-cap="Learning Japanese calligraphy in Japan">
+        <img src="assets/img/japan-calligraphy.jpg" width="738" height="1310" alt="Muskaan painting Japanese characters with a brush while her teacher guides her hand" loading="lazy"><span class="cap">Japanese calligraphy lesson</span>
+      </button>
+      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/japan-kombu.jpg" data-cap="Learning to hand-shave kombu, a traditional Japanese craft">
+        <img src="assets/img/japan-kombu.jpg" width="738" height="1310" alt="Muskaan shaving a sheet of kombu with a craftsman in traditional work clothes" loading="lazy"><span class="cap">Hand-shaving kombu</span>
+      </button>
       <button class="zoom" type="button" data-group="gallery" data-src="assets/img/japan-street.jpg" data-cap="Exploring a historic street of wooden houses in Japan">
         <img src="assets/img/japan-street.jpg" width="960" height="1280" alt="Muskaan with two friends on a street of old wooden houses" loading="lazy"><span class="cap">Historic streets</span>
       </button>
@@ -1170,9 +1176,6 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       </button>
       <button class="zoom" type="button" data-group="gallery" data-src="assets/img/fukui-compare.jpg" data-cap="Fukui and Pakistan side by side in her talk">
         <img src="assets/img/fukui-compare.jpg" width="1400" height="1050" alt="Slide comparing Fukui and Pakistan while Muskaan speaks at the podium" loading="lazy"><span class="cap">Fukui and Pakistan, side by side</span>
-      </button>
-      <button class="zoom tall" type="button" data-group="gallery" data-src="assets/img/graduation-look-up.jpg" data-cap="Looking up on graduation day">
-        <img src="assets/img/graduation-look-up.jpg" width="465" height="1254" alt="Muskaan in her graduation gown, smiling and looking up" loading="lazy"><span class="cap">Looking up</span>
       </button>
       <button class="zoom" type="button" data-group="gallery" data-src="assets/img/fukui-team.jpg" data-cap="After the talk in Fukui">
         <img src="assets/img/fukui-team.jpg" width="808" height="1400" alt="Muskaan with two fellow participants after the talk" loading="lazy"><span class="cap">After the talk in Fukui</span>
