@@ -122,18 +122,6 @@ p { margin: 0; }
 .link:hover { border-bottom-color: var(--accent); }
 .links { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 10px; font-size: .95rem; }
 
-/* MS/PhD notice bar */
-.notice { background: var(--pop); color: var(--on-pop); }
-.notice-row { display: flex; align-items: center; gap: 8px 14px; flex-wrap: wrap; padding-block: 9px; font-size: .93rem; line-height: 1.35; }
-.notice-row p { margin-right: auto; }
-.notice-dot { flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--on-pop); }
-.notice-links { display: flex; gap: 16px; }
-.notice-links a { color: var(--on-pop); font-weight: 700; text-underline-offset: 3px; }
-@media (prefers-reduced-motion: no-preference) {
-  .notice-dot { animation: pulse 1.8s ease-out infinite; }
-  @keyframes pulse { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--on-pop) 45%, transparent); } 100% { box-shadow: 0 0 0 9px transparent; } }
-}
-
 /* Header */
 .site-header {
   position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
@@ -561,17 +549,6 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 </style>
 </head>
 <body id="top">
-
-<div class="notice">
-  <div class="wrap notice-row">
-    <span class="notice-dot" aria-hidden="true"></span>
-    <p><strong>Looking for MS/PhD positions.</strong> Muskaan is ready to join a research group.</p>
-    <span class="notice-links">
-      <a href="files/Muskaan-Irfan-CV.pdf" target="_blank" rel="noopener">View CV</a>
-      <a href="#contact">Get in touch</a>
-    </span>
-  </div>
-</div>
 
 <header class="site-header">
   <div class="wrap header-row">
