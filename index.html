@@ -379,6 +379,7 @@ mark {
 .gallery { columns: 3 260px; column-gap: 14px; }
 .gallery .zoom { margin-bottom: 14px; break-inside: avoid; }
 .gallery .zoom img { height: auto; }
+.gallery .zoom.tall img { aspect-ratio: 3 / 5; object-fit: cover; object-position: var(--pos, 50% 0%); }
 
 /* Art */
 .art-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(8px, 1.6vw, 16px); }
@@ -1134,20 +1135,44 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     <div class="section-head">
       <p class="eyebrow">Gallery</p>
       <h2 class="h2" id="gallery-h">In action</h2>
-      <p class="intro">On stage in Japan and milestones along the way. Tap any photo to see it larger.</p>
+      <p class="intro">On stage in Japan, exploring Kanazawa with fellow researchers, and milestones along the way. Tap any photo to see it larger.</p>
     </div>
     <div class="gallery">
+      <button class="zoom tall" type="button" data-group="gallery" data-src="assets/img/graduation-cap-toss.jpg" data-cap="Cap toss on graduation day, Quaid-i-Azam University">
+        <img src="assets/img/graduation-cap-toss.jpg" width="495" height="1362" alt="Muskaan smiling in her graduation gown as her cap flies above her" loading="lazy"><span class="cap">Cap toss on graduation day</span>
+      </button>
+      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/kenrokuen.jpg" data-cap="At Kenroku-en, one of Japan's three great gardens, in Kanazawa">
+        <img src="assets/img/kenrokuen.jpg" width="1050" height="1400" alt="Muskaan standing under tall pine trees at the entrance to Kenroku-en garden" loading="lazy"><span class="cap">Kenroku-en, Kanazawa</span>
+      </button>
       <button class="zoom" type="button" data-group="gallery" data-src="assets/img/fukui-keynote.jpg" data-cap="Presenting at the University of Fukui, 2026">
         <img src="assets/img/fukui-keynote.jpg" width="1200" height="1600" alt="Muskaan speaking with a microphone in front of her title slide" loading="lazy"><span class="cap">Presenting in Fukui</span>
+      </button>
+      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/kenrokuen-friends.jpg" data-cap="With fellow Sakura Science participants at Kenroku-en">
+        <img src="assets/img/kenrokuen-friends.jpg" width="1400" height="1051" alt="Group selfie of Muskaan and four friends at the entrance to Kenroku-en" loading="lazy"><span class="cap">Friends at Kenroku-en</span>
+      </button>
+      <button class="zoom tall" type="button" data-group="gallery" data-src="assets/img/fukui-flag.jpg" data-cap="Beside the University of Fukui flag" style="--pos: 50% 100%;">
+        <img src="assets/img/fukui-flag.jpg" width="670" height="1400" alt="Muskaan standing beside the blue University of Fukui flag" loading="lazy"><span class="cap">University of Fukui</span>
+      </button>
+      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/sakura-van.jpg" data-cap="On the road with the Sakura Science group">
+        <img src="assets/img/sakura-van.jpg" width="1050" height="1400" alt="Selfie in a minibus with Muskaan and fellow participants making peace signs" loading="lazy"><span class="cap">On the road together</span>
       </button>
       <button class="zoom" type="button" data-group="gallery" data-src="assets/img/fukui-six-places.jpg" data-cap="Six places that stayed with us: highlights from Fukui">
         <img src="assets/img/fukui-six-places.jpg" width="1400" height="1050" alt="A slide titled Six places that stayed with us, with Muskaan at the podium" loading="lazy"><span class="cap">Six places that stayed with us</span>
       </button>
-      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/fukui-compare.jpg" data-cap="Fukui and Pakistan side by side in her talk">
-        <img src="assets/img/fukui-compare.jpg" width="1400" height="1050" alt="Slide comparing Fukui and Pakistan while Muskaan speaks at the podium" loading="lazy"><span class="cap">Fukui and Pakistan, side by side</span>
+      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/japan-street.jpg" data-cap="Exploring a historic street of wooden houses in Japan">
+        <img src="assets/img/japan-street.jpg" width="960" height="1280" alt="Muskaan with two friends on a street of old wooden houses" loading="lazy"><span class="cap">Historic streets</span>
+      </button>
+      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/fukui-hosts-selfie.jpg" data-cap="With hosts and fellow participants in Fukui">
+        <img src="assets/img/fukui-hosts-selfie.jpg" width="1362" height="1400" alt="Selfie of Muskaan with fellow participants and two hosts by a window over the city" loading="lazy"><span class="cap">With hosts in Fukui</span>
       </button>
       <button class="zoom" type="button" data-group="gallery" data-src="assets/img/graduation.jpg" data-cap="Graduation day, BS Mathematics, Quaid-i-Azam University, Class of 2022">
         <img src="assets/img/graduation.jpg" width="933" height="1400" alt="Muskaan in graduation cap and gown with a Class of 2022 stole" loading="lazy"><span class="cap">Graduation, Class of 2022</span>
+      </button>
+      <button class="zoom" type="button" data-group="gallery" data-src="assets/img/fukui-compare.jpg" data-cap="Fukui and Pakistan side by side in her talk">
+        <img src="assets/img/fukui-compare.jpg" width="1400" height="1050" alt="Slide comparing Fukui and Pakistan while Muskaan speaks at the podium" loading="lazy"><span class="cap">Fukui and Pakistan, side by side</span>
+      </button>
+      <button class="zoom tall" type="button" data-group="gallery" data-src="assets/img/graduation-look-up.jpg" data-cap="Looking up on graduation day">
+        <img src="assets/img/graduation-look-up.jpg" width="465" height="1254" alt="Muskaan in her graduation gown, smiling and looking up" loading="lazy"><span class="cap">Looking up</span>
       </button>
       <button class="zoom" type="button" data-group="gallery" data-src="assets/img/fukui-team.jpg" data-cap="After the talk in Fukui">
         <img src="assets/img/fukui-team.jpg" width="808" height="1400" alt="Muskaan with two fellow participants after the talk" loading="lazy"><span class="cap">After the talk in Fukui</span>
