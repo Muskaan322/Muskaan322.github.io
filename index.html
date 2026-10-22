@@ -210,15 +210,15 @@ mark {
 .trust-names { display: flex; flex-wrap: wrap; gap: 6px 22px; font: 650 1.02rem/1.4 var(--f-display); }
 
 /* Numbers */
-.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); }
 .stat { padding: 28px 24px 30px 0; border-bottom: 1px solid var(--line); display: grid; gap: 8px; align-content: start; }
-.stat:not(:nth-child(3n + 1)) { padding-left: 24px; border-left: 1px solid var(--line); }
+.stat:not(:nth-child(4n + 1)) { padding-left: 24px; border-left: 1px solid var(--line); }
 .stat b { font: 760 clamp(2.6rem, 5vw, 3.8rem)/1 var(--f-display); letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
 .stat b small { font-size: .5em; color: var(--muted); font-weight: 600; letter-spacing: 0; }
 .stat span { color: var(--muted); font-size: .98rem; max-width: 30ch; }
 @media (max-width: 720px) {
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .stat, .stat:not(:nth-child(3n + 1)) { padding: 22px 14px 24px 0; border-left: 0; }
+  .stat, .stat:not(:nth-child(4n + 1)) { padding: 22px 14px 24px 0; border-left: 0; }
   .stat:nth-child(even) { padding-left: 16px; border-left: 1px solid var(--line); }
 }
 
@@ -376,7 +376,7 @@ mark {
 .art-item figcaption { font-size: .9rem; line-height: 1.35; }
 .art-item figcaption span { display: block; color: var(--muted); font: 500 .76rem/1.4 var(--f-mono); }
 
-/* Story: the candidature's "A Girl with Big Dreams" pages, retold as a scrapbook of instant photos */
+/* Story: "A Girl with Big Dreams", told as a scrapbook of instant photos */
 .story { background: var(--surface); }
 .story-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(36px, 6vw, 80px); align-items: center; }
 .story-copy { display: grid; gap: 18px; min-width: 0; }
@@ -480,6 +480,8 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   box-shadow: 0 6px 16px -10px color-mix(in srgb, var(--violet) 45%, transparent);
 }
 .titles .t-sakura { background: var(--pop); color: var(--on-pop); border-color: transparent; }
+.titles .t-key { background: var(--grad-btn); color: var(--on-accent); border-color: transparent; }
+.sub strong { color: var(--ink); font-weight: 650; }
 .badge { background: color-mix(in srgb, var(--bg) 76%, transparent); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
 .btn:not(.ghost) {
   background: var(--grad-btn); border-color: transparent; color: var(--on-accent);
@@ -581,6 +583,8 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       <h1 class="hero-name rise">Muskaan Irfan</h1>
       <ul class="titles rise d1" aria-label="Titles">
         <li class="t-sakura"><span lang="ja">桜</span>Sakura Science Researcher</li>
+        <li class="t-key">IEEE MedAI 2026 Committee Member</li>
+        <li class="t-key">WiML @ NeurIPS 2026 Reviewer</li>
         <li>Data Scientist</li>
         <li>Mathematician</li>
         <li>Top Coder</li>
@@ -591,10 +595,9 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       </ul>
       <p class="statement rise d1">Solving hard problems with data, and <mark>teaching hundreds of others to do the same.</mark></p>
       <p class="lede rise d2"><strong>Muskaan Irfan</strong> is a data scientist and mathematician from Pakistan. In 2026 the Government of Japan invited her to the University of Fukui as a JST Sakura Science visiting researcher. She holds an MS in Data Science from Air University, where she graduated as Silver Medalist, and a BS in Mathematics from Quaid-i-Azam University. <strong>She is now looking for MS/PhD positions.</strong></p>
-      <p class="sub rise d2">She has won Harvard's CS50x Puzzle Day three years in a row, led a section of Stanford's Code in Place, judged international hackathons and given more than 200 hours of volunteer teaching to students who could not afford classes. She is also a national badminton player.</p>
+      <p class="sub rise d2"><strong>She serves on the Program Committee of IEEE MedAI 2026 and reviews for WiML @ NeurIPS 2026.</strong> She has won Harvard's CS50x Puzzle Day three years in a row, led a section of Stanford's Code in Place, judged international hackathons and given more than 200 hours of volunteer teaching to students who could not afford classes. She is also a national badminton player.</p>
       <div class="cta-row rise d3">
         <a class="btn" href="files/Muskaan-Irfan-CV.pdf" target="_blank" rel="noopener">View my CV</a>
-        <a class="btn ghost" href="files/Muskaan-Irfan-Candidature.pdf" target="_blank" rel="noopener">Candidature file</a>
         <a class="btn ghost" href="#contact">Get in touch</a>
       </div>
     </div>
@@ -628,6 +631,8 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     <div class="stats">
       <div class="stat"><b>3×</b><span>Winner of Harvard's CS50x Puzzle Day, in 2024, 2025 and 2026</span></div>
       <div class="stat"><b>114<small>/530+</small></b><span>Global rank among teams at the MIT Informatics Tournament 2025</span></div>
+      <div class="stat"><b>2<small>nd</small></b><span>Among female coders in Pakistan on the Advent of Code 2025 leaderboard</span></div>
+      <div class="stat"><b>6<small>th</small></b><span>In Pakistan at the Meta Hacker Cup 2025 Practice Round, top 3% globally</span></div>
       <div class="stat"><b>500+</b><span>Participants at her GenAI hackathon webinar</span></div>
       <div class="stat"><b>100+</b><span>Hackathon projects evaluated as a judge and mentor</span></div>
       <div class="stat"><b>200+</b><span>Hours of volunteer teaching for underprivileged students</span></div>
@@ -736,6 +741,18 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     </div>
     <div class="roles">
       <article class="role">
+        <p class="when">2026</p>
+        <div>
+          <h3>Program Committee Member &amp; Reviewer <span class="org">IEEE MedAI 2026 · WiML @ NeurIPS 2026</span></h3>
+          <p>Selected to peer-review medical AI research for IEEE MedAI 2026 and to review for WiML @ NeurIPS 2026. She has reviewed 10+ papers and abstracts, and speaks at academic and research events.</p>
+          <p class="links">
+            <a class="link arrow" href="https://drive.google.com/file/d/19-4-_sw9BPHu1FXLA-F9q8oThoLj9DUy/view?usp=sharing" target="_blank" rel="noopener">IEEE MedAI </a>
+            <a class="link arrow" href="https://drive.google.com/file/d/1ad-PGoF4ii3JGfLn7kxbVH6HC7BKL6BK/view?usp=sharing" target="_blank" rel="noopener">Reviewer record </a>
+            <a class="link arrow" href="https://www.linkedin.com/feed/update/urn:li:activity:7499934362474348544/" target="_blank" rel="noopener">Announcement </a>
+          </p>
+        </div>
+      </article>
+      <article class="role">
         <p class="when">Feb 2024 – now</p>
         <div>
           <h3>STEM Program Manager <span class="org">iCode Guru · San Jose, CA (remote)</span></h3>
@@ -759,17 +776,6 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
           <p class="links">
             <a class="link arrow" href="https://www.youtube.com/watch?v=SDbo38Wre6I&amp;t=132s" target="_blank" rel="noopener">Watch the webinar </a>
             <a class="link arrow" href="https://www.linkedin.com/posts/muskaan03_generativeai-generativeai-hackathon-activity-7309991696799277057-qxS2" target="_blank" rel="noopener">Hackathon post </a>
-          </p>
-        </div>
-      </article>
-      <article class="role">
-        <p class="when">2026</p>
-        <div>
-          <h3>Program Committee Member &amp; Reviewer <span class="org">IEEE MedAI 2026 · WiML @ NeurIPS 2026</span></h3>
-          <p>Selected to peer-review medical AI research for IEEE MedAI 2026 and to review for WiML @ NeurIPS 2026. She has reviewed 10+ papers and abstracts, and speaks at academic and research events.</p>
-          <p class="links">
-            <a class="link arrow" href="https://drive.google.com/file/d/19-4-_sw9BPHu1FXLA-F9q8oThoLj9DUy/view?usp=sharing" target="_blank" rel="noopener">IEEE MedAI </a>
-            <a class="link arrow" href="https://drive.google.com/file/d/1ad-PGoF4ii3JGfLn7kxbVH6HC7BKL6BK/view?usp=sharing" target="_blank" rel="noopener">Reviewer record </a>
           </p>
         </div>
       </article>
@@ -965,7 +971,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     <div class="section-head">
       <p class="eyebrow">Certificates</p>
       <h2 class="h2" id="certs-h">From Harvard to Fukui, on paper</h2>
-      <p class="intro">Every certificate from her candidature file and her LinkedIn. Tap any certificate to see it full size.</p>
+      <p class="intro">Every certificate she has earned, from Harvard to Fukui. Tap any certificate to see it full size.</p>
     </div>
     <div class="cert-grid">
       <figure class="cert-card feature">
@@ -1283,7 +1289,6 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       <p class="intro">Muskaan is looking for MS/PhD positions. She is also open to talks, mentoring, hackathon judging and research collaborations.</p>
       <div class="cta-row">
         <a class="btn" href="files/Muskaan-Irfan-CV.pdf" target="_blank" rel="noopener">View my CV</a>
-        <a class="btn ghost" href="files/Muskaan-Irfan-Candidature.pdf" target="_blank" rel="noopener">Candidature file</a>
       </div>
     </div>
     <div class="contact-list">
